@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>SSH server security - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "SSH server security";
+        var mkdocs_page_input_path = "manjaro/notes/ssh-secure-your-ssh-service.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Manjaro</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../ai/manjaro-folding-at-home/">Manjaro Folding@Home</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-on-a-stick/">Manjaro on a stick</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-04-update-the-smart-way/">Update Manjaro the smart way</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-dns-using-bind-for-local-domain/">Using bind for local domain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-file-sharing-manjaro/">Setting up NFS using Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">SSH server security</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-arm-wireless-file-service/">ARM wireless Samba file service based on Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-basic-setup-and-troubleshooting/">Basic Samba Setup and Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/virtualbox-headless-windows/">Headless Windows on VirtualBox</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Notes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-fstab/">Store personal files using separate partition (fstab)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Manjaro</li>
+      <li class="breadcrumb-item active">SSH server security</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><strong>Difficulty: ★★★☆☆</strong></p>
+<p>This document has been posted at <a href="https://forum.manjaro.org/t/root-tip-set-up-your-own-ssh-service/60665">Manjaro Forum</a> which in turn is put together from my old topics from the archived forum [[1][11]] [[2][12]]</p>
+<h2 id="ssh-server-security">SSH server security</h2>
+<p>When you setup a SSH server on a public IP, your service will be <strong><em>spammed within minutes</em></strong> attempting to brute force your login.</p>
+<p>Your first task as admin of a SSH server is to secure it.</p>
+<h2 id="topic-assumptions">Topic assumptions</h2>
+<ol>
+<li>A Manjaro instance with at least two users, a root user <strong>and</strong> a user belonging to the <code>%wheel</code> group.</li>
+<li>A drop-in config in <code>/etc/sudoers.d/</code> assigning permissions to the group.</li>
+<li>Such file is created with default Manjaro install
+   <code>$ cat /etc/sudoers.d/10-installer
+   %wheel ALL=(ALL) ALL</code></li>
+</ol>
+<p>If you have installed Manjaro by hand you will need to establish such file by hand. <strong>Always use visudo</strong> as the filepermissions are important.</p>
+<h2 id="ssh-security">SSH security</h2>
+<p>Your SSH server is not the only server you may come across using a public key infrastucture. If you are a using services like Github, GitLab, SourceForge, OSDN and many more - you have come across this before.</p>
+<h2 id="1-public-key-login">1. Public key login</h2>
+<h3 id="create-key-pair">Create key pair</h3>
+<p>SSH public key infrastructure is actually a key <em>pair</em> consisting of both a public and a private key. The public part has the extension <strong>.pub</strong> and this is the key you place on the server or service.</p>
+<p>You create key pair using the <code>ssh-keygen</code> utility. This utility takes various arguments which affects how the key-pair is generated and where the files are placed.</p>
+<p>The defaults are sane but in case you want a stronger key, you can use the man-pages to expand your knowledge.</p>
+<pre><code class="language-bash">$ man ssh-keygen
+</code></pre>
+<p>It is recommended to use a separate key for each server and each device you are using to connect with and to tell the keys apart you use a different filename  e.g. the name of the service. If you have a <a href="https://linode.com">Linode</a> cloud instance you could name the file <strong>linode</strong> or if you are using <a href="https://osdn.net">OSDN</a> you may name it <strong>osdn</strong>.</p>
+<p>To create a key-pair for a service using the service name for the key-pair, you supply the path to the file using the <strong>-f</strong> argument - in this example I will use the name <strong>ssh-service</strong> with the cipher appened.</p>
+<p>When you create the key you have the option of using a password - or you can leave password blank. This of course lowers the security on client side - but you don't have to unlock the key-pair on use - and it is a matter of choice - just remember to keep you private keys safe - no matter using key password or not.</p>
+<p><strong>EDIT: 2021-10-16</strong>
+Due to recent changes and deprecation of ciphers considered unsafe you should add the <code>-t</code> option to specify the cipher to be used preferably <strong>ed25519</strong></p>
+<pre><code class="language-bash">$ ssh-keygen -t ed25519  -f ~/.ssh/ssh-service-ed25519.ppk
+</code></pre>
+<p>You don't need to use the <code>.ppk</code> part, but doing so makes it easy to configure <a href="https://filezilla-project.org">FileZilla</a> as SFTP client using a keyfile.</p>
+<h3 id="transfer-the-public-key-to-the-server">Transfer the public key to the server</h3>
+<p>Many VPS providers only provide a root account on the initial device in which case you will have to target root for the keyfile.</p>
+<p>Manjaro installations defaults to keyfile only for root login. Therefore you will need another user account on the device with sudo privilege to be able to upoload the keyfile.</p>
+<p>To upload the public part to the server - you can use the <code>scp</code> command which is an abbreviation of <strong>secure copy</strong>. The command consist of three parts:</p>
+<ul>
+<li>The command itself</li>
+<li>The path to the file to be copied </li>
+<li>Server and where to put the file</li>
+</ul>
+<p>In case of a VPS with only a root user</p>
+<pre><code>$ scp ./ssh/ssh-service-ed25519.ppk.pub  root@host:/root/.ssh
+</code></pre>
+<p>Or in case of a rapsberry pi in your local network</p>
+<pre><code>$ scp ./ssh/ssh-service-ed25519.ppk.pub  $user@host:/home/$USER/.ssh/
+</code></pre>
+<p>Another option is to use <a href="https://www.ssh.com/ssh/copy-id/#copy-the-key-to-a-server">ssh-copy</a> to send the file to your ssh service</p>
+<pre><code class="language-bash">ssh-copy-id -i ~/.ssh/ssh-service-ed25519.ppk.pub $USER@server.domain.tld
+</code></pre>
+<p>Log off the server and test your connection using your identity file</p>
+<pre><code class="language-bash">ssh $USER@server.domain.tld -i ~/.ssh/ssh-service-ed25519.ppk.pub
+</code></pre>
+<p>If you - in the above key-generation supplied a password to protect your key-pair - you will be prompted to unlock the key-pair.</p>
+<p>If you did it right - you are now in a  remote shell without being prompted for credentials. </p>
+<h2 id="2-disable-password-login">2. Disable password login</h2>
+<p>When you are logged in - using the public key - edit the file <code>/etc/ssh/sshd_config</code></p>
+<pre><code class="language-bash">sudo nano /etc/ssh/sshd_config
+</code></pre>
+<p>Scroll down to the lines reading:</p>
+<pre><code class="language-text"># To disable tunneled clear text passwords, change to no here!
+#PasswordAuthentication yes
+#PermitEmptyPasswords no
+</code></pre>
+<p>And change them  to:</p>
+<pre><code class="language-text">PasswordAuthentication no
+</code></pre>
+<h2 id="3-change-port">3. Change port</h2>
+<p>While you are logged in - <strong>seriously consider changing the port from the default 22 to something else!</strong> Consult <code>/etc/services</code> to avoid a collision with known services - but in reality any port over 10000 can be used.</p>
+<p>The port is located at the top of the configuration</p>
+<pre><code class="language-text"># Port 22
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
+</code></pre>
+<p>Uncomment the line  and change the port number</p>
+<pre><code class="language-text">Port 33000
+</code></pre>
+<p>Save the changes and restart the sshd daemon</p>
+<pre><code class="language-bash"># systemctl reload sshd
+</code></pre>
+<h2 id="4-connecting-to-the-server">4. Connecting to the server</h2>
+<p>Connecting to SSH server can be automated by means of the user's local configuration.  Some points to remember:
+- the file is parsed from top to bottom<br />
+- the first match is used </p>
+<p><em>so don't keep duplicated entries!</em></p>
+<p>If you plan to connect to the same server using different users, this can easily be done using different names for the <strong>Host</strong> entry.</p>
+<p>Every server or service is designated by the <strong>Host</strong> - all lines between <strong>Host</strong> entries belong to the preceding <strong>Host</strong>.</p>
+<pre><code class="language-bash">$ nano ~/.ssh/config
+</code></pre>
+<p>Add your server details - examples</p>
+<pre><code class="language-text">Host nickname
+  Hostname server.domain.tld
+  IdentityFile ~/.ssh/ssh-service-ed25519.ppk
+  user root
+  Port 33000
+Host fido.domain.tld
+  IdentityFile ~/.ssh/fido.ppk
+  user fido
+</code></pre>
+<pre><code class="language-bash">ssh nickname
+</code></pre>
+<h3 id="note-on-host-key-fingerprint">Note on host key fingerprint</h3>
+<p>Upon first connection to a - previously unknown - ssh service you will be challenged before connection - something like</p>
+<pre><code>$ ssh user@hostname
+The authenticity of host 'hostname (v.x.y.z)' can't be established.
+ED25519 key fingerprint is SHA256:P4QBIqLt6g6JU5P3po0WRLF+mr0ypYhhG3iGgCprM20.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:15: v.x.y.z
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</code></pre>
+<p>The ssh client will always try to match the remote system to a list of known hosts found in ~/.ssh/known_hosts and if no match is found the client challenge you to trust the host. If you accept the challenge - the host key fingerprint will be added to the list.</p>
+<p>If you - for any reason want to skip this check you can do so by adding an option to your connection command</p>
+<pre><code>ssh -o StrictHostKeyChecking=no
+</code></pre>
+<p>If you are wearing a blackhat and have a host which regularly changes IP or if you only connect to your own systems you could opt to completely ignore the fingerprints by adding it to your local <strong>~/.ssh/config</strong></p>
+<pre><code>Host *
+  StrictHostKeyChecking no
+</code></pre>
+<h3 id="a-note-on-passwordless-keyfiles">A note on passwordless keyfiles</h3>
+<p>When you have a lot of key-pairs (using no password) - you may run into the message - <strong>too many failed logins</strong> and subsequently - on a Manjaro system - the user may be locked.</p>
+<p>You can create a workaround for this by disabling identity agent for the host or you can specify the the identity file on the command line when you connect to the host.</p>
+<p>This can be done for all or for a single host</p>
+<pre><code>Host nickname
+  IdentityAgent none
+...
+</code></pre>
+<p>Or using a wildcard</p>
+<pre><code>Host *
+  IdentityAgent none
+...
+</code></pre>
+<h2 id="4-secure-your-key-pairs">4. Secure your key-pairs</h2>
+<p>You don't want to loose your key collection.</p>
+<p><strong>IMPORTANT</strong>: Keep a copy of your <strong>~/.ssh</strong> folder in a secure location and if you are using password less keys - keep them safe by:</p>
+<ul>
+<li>using a strong password on your system </li>
+<li>disabling the root account</li>
+<li>mandatory <code>chown $USER:$USER .ssh -R &amp;&amp; chmod u-x,go-rwx ~/.ssh/*</code></li>
+</ul>
+<h2 id="5-firewall">5. Firewall</h2>
+<p>Next step is to ensure <strong>only</strong> allowed services are accessible by implementing a firewall.</p>
+<h3 id="firewalld">Firewalld</h3>
+<p><a href="https://firewalld.org/">Firewalld</a> a very good firewall service - well suited on systemd based systems like Manjaro. Firewalld can be configured using the term application since an application is merely a definition of which ports should be allowed - e.g. a http application or ssh or smtp.</p>
+<p>When you configure the firewall you use zones to define where you are and services to define what you allow. Install firewalld:</p>
+<pre><code class="language-bash"># pacman -Syu firewalld
+</code></pre>
+<p>When firewalld is enabled and started the default zone is <strong>public</strong> which allows the computer to be visible but all ports closed.</p>
+<p>Adding a specific service (application) is easily done using the command line but you can also use the applet found in your system configuration area. A systray application is available if you install the dependencies for it (python-pyqt5). Adding services has immediate effect - no need to reload the service. Simply add the service to the allowed service to the desired zone</p>
+<p>Example - adding <strong>http</strong> to <strong>public</strong> zone</p>
+<pre><code class="language-bash"># firewall-cmd --zone=public --add-service=http
+success
+</code></pre>
+<p>It is important to realize that changes you make on the fly are not permanent. To make a certain service available permanently, add the <code>--permanent</code> argument</p>
+<pre><code class="language-bash"># firewall-cmd --permanent --zone=public --add-service=http
+success
+</code></pre>
+<p>What if you want to add your own service definition?</p>
+<p>Easy-peasy - look in the folder <code>/usr/lib/firewalld/services</code> and make a copy of an appropriate service definition.</p>
+<p>Example - you want to run a ssh server on a non default port.</p>
+<p>Copy the <code>ssh.xml</code> service definition to <code>/etc/firewalld/services</code></p>
+<pre><code># cp /usr/lib/firewalld/services/ssh.xml /etc/firewalld/services/my-ssh.xml
+</code></pre>
+<p>Edit the service definition </p>
+<pre><code class="language-bash"># nano /etc/firewalld/services/my-ssh.xml
+</code></pre>
+<p>Change the port to match your service and the short name to distinguish from the original service.</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;service&gt;
+  &lt;short&gt;My SSH service&lt;/short&gt;
+  &lt;description&gt;Secure Shell (SSH) is a protocol for logging into and executing commands on remote machines. It provides secure encrypted communications. If you plan on accessing your machine remotely via SSH over a firewalled interface, enable this option. You need the openssh-server package installed for this option to be useful.&lt;/description&gt;
+  &lt;port protocol=&quot;tcp&quot; port=&quot;30000&quot;/&gt;
+&lt;/service&gt;
+</code></pre>
+<p>Wait 5-10 seconds for the service file to be recognized and activate it (Same rule on permanent applies)</p>
+<pre><code class="language-bash"># firewall-cmd --zone=public --add-service=my-ssh --permanent
+success
+</code></pre>
+<p>That's it - more info on firewalld can be found using the dedicated webpage</p>
+<p>https://firewalld.org/documentation/</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../share-data-in-multiuser-environment/" class="btn btn-neutral float-left" title="Sharing data in multiuser environment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../thunar-custom-actions/" class="btn btn-neutral float-right" title="Thunar custom actions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../share-data-in-multiuser-environment/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../thunar-custom-actions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

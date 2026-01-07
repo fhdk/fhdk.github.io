@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Headless Windows on VirtualBox - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Headless Windows on VirtualBox";
+        var mkdocs_page_input_path = "manjaro/virtual/virtualbox-headless-windows.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Manjaro</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../ai/manjaro-folding-at-home/">Manjaro Folding@Home</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-on-a-stick/">Manjaro on a stick</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-04-update-the-smart-way/">Update Manjaro the smart way</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-dns-using-bind-for-local-domain/">Using bind for local domain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-file-sharing-manjaro/">Setting up NFS using Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/ssh-secure-your-ssh-service/">SSH server security</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-arm-wireless-file-service/">ARM wireless Samba file service based on Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-basic-setup-and-troubleshooting/">Basic Samba Setup and Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Headless Windows on VirtualBox</a>
+    <ul class="current">
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Notes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-fstab/">Store personal files using separate partition (fstab)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Manjaro</li>
+      <li class="breadcrumb-item active">Headless Windows on VirtualBox</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="running-a-headless-windows-using-virtualbox-and-systemd">Running a headless Windows using VirtualBox and systemd</h2>
+<p>What I had in mind was a powerhouse - to run a Windows 10 with Visual Studio and SQL server - as a virtual machine - a development project I have.</p>
+<p>I want to power on the system and after boot - ideally - the Windows system would be available using RDP.</p>
+<p>After some speculations I decided to look at my pile of hardware - I got a few servers collecting dust - but they are noisy as a highway at rush hour. </p>
+<p>But I got a tower from when my daughter was teenager. Its an older i7 on an Intel board - maybe it will do.</p>
+<pre><code>System:    Host: tower Kernel: 5.5.13-1-MANJARO x86_64 bits: 64 Console: tty 0 
+           Distro: Manjaro Linux 
+Memory:    RAM: total: 15.63 GiB used: 566.3 MiB (3.5%) 
+           Array-1: capacity: 32 GiB note: est. slots: 4 EC: None 
+           Device-1: CHAN A DIMM 0 size: 8 GiB speed: 1067 MT/s 
+           Device-2: CHAN A DIMM 1 size: No Module Installed 
+           Device-3: CHAN B DIMM 0 size: No Module Installed 
+           Device-4: CHAN C DIMM 0 size: 8 GiB speed: 1067 MT/s 
+CPU:       Topology: Quad Core model: Intel Core i7 950 bits: 64 type: MT MCP L2 cache: 8192 KiB 
+           Speed: 1825 MHz min/max: 1596/3060 MHz Core speeds (MHz): 1: 2389 2: 2278 3: 2029 
+           4: 1993 5: 1621 6: 1916 7: 1962 8: 1696 
+</code></pre>
+<hr />
+<p>I have a virtual machine with Visual Studio and SQL installed but that is on another system - what would be the easiest way to directly transfer the VM 127G? NFS of course. </p>
+<p>I added an extra 250G SSD for VM storage to the system and enabled/started the ssh daemon so I could continue using terminal.</p>
+<p>Added the necessary setup - using my own <a href="https://archived.forum.manjaro.org/t/howto-share-data-between-two-computers-using-nfs/102992?u=linux-aarhus">guide to NFS</a> (my memory is muscle memory - I haven't setup that much NFS). I then transferred the VM to the new system.</p>
+<p>Installed the virtualbox packages - build the oracle extension pack (necessary for VRDE).</p>
+<p>VirtualBox looks for machines in the user's <strong>~/VirtualBox\ VMs</strong> folder so I made a symlink from the VM storage location into my user home</p>
+<pre><code>ln -s /data/virtualbox ~/VirtualBox\ VMs
+</code></pre>
+<p><a href="https://www.oracle.com/technical-resources/articles/it-infrastructure/admin-manage-vbox-cli.html">VirtualBox CLI</a> is - according to Oracle - the only method exposing all possible VM manipulation you think of.</p>
+<p>VirtualBox cannot start a virtual machine if it don't know of it - so I needed to register the VM</p>
+<pre><code>VBoxManage registervm /home/$USER/VirtualBox\ VMs/vstudio/vstudio.vbox
+</code></pre>
+<p>To be able to access the VM remotely - I need to enable VRDE (virtualbox-ext-oracle contains this functionality).</p>
+<pre><code>VBoxManager modifyvm vstudio --vrde on
+</code></pre>
+<p>Verify</p>
+<pre><code>VBoxManage showvminfo vstudio | grep VRDE
+</code></pre>
+<p>Start the VM</p>
+<pre><code>VBoxManage startvm vstudio --type headless
+</code></pre>
+<p>On my workstation I already have <strong>remmina</strong> and <strong>freerdp</strong> packages - so to verify have set it up - launching remmina and connecting to my tower IP - and login to the Windows 10 system.</p>
+<pre><code>VBoxManager controlvm --savestate
+</code></pre>
+<hr />
+<p>Now auto starting the VM should be a piece of cake - but everything I can think of is scripted and it requires a login - and I would very much like to avoid that.</p>
+<p>After more thinking - well - others must have had this idea too - and there is. I found a very old post on using <a href="http://www.ericerfanian.com/automatically-starting-virtualbox-vms-on-archlinux-using-systemd/">systemd to load a virtual machine on boot</a>.</p>
+<p>If was incredibly simple - and honestly - I doubted it would work - because the VM is stored in my users home - but to my pleasant surprise - it works :slight_smile:</p>
+<p>The topic mentioned the requirement of the user owning the machine and responsible for starting it should be member of <strong>vboxusers</strong> group.</p>
+<pre><code>[Unit]
+Description=VBox Virtual Machine %i Service
+Requires=systemd-modules-load.service
+After=systemd-modules-load.service
+
+[Service]
+User=user
+Group=vboxusers
+ExecStart=/usr/bin/VBoxHeadless -s %i
+ExecStop=/usr/bin/VBoxManage controlvm %i savestate
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>I discovered VBoxHeadless and that you can enable VRDE when using VBoxHeadless to start the VM.</p>
+<p>Saved the file as <strong>vboxvmservice@.service</strong></p>
+<p>Enable a vm specific service</p>
+<pre><code>sudo systemctl enable vboxvmservice@vstudio.service
+</code></pre>
+<p>Start the service</p>
+<pre><code>sudo systemctl start vboxvmservice@vstudio.service
+</code></pre>
+<p>I also discovered that the defaults for such systemd service may timeout and the service shutdown before the VBoxManage command could finalize the saving of state - making Windows start in trouble shooting mode.</p>
+<p>Adding a <strong>TimeoutStopSec=60</strong> to the <strong>Service</strong> definition solved the issue. If you experience Windows Repair issues because it takes longer to save the state of the VM - increase the value.</p>
+<p>It is also possible to use <strong>acpipowerbutton</strong> instead of <strong>savestate</strong>. Be careful with that if you don't have an up-to-date installation of the guest-iso inside the VM. If not the acpipowerbutton is not reliable.</p>
+<hr />
+<p>So now I power on the ~server~ computer - wait until it is up - then I connect to my visual studio virtual machine and I have released my workstation of that burden.</p>
+<p>And I can shut it down without damaging my windows installation.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../libvirt-install-windows-11/" class="btn btn-neutral float-left" title="virt-manager - Windows 11"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/" class="btn btn-neutral float-right" title="Install with local account">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../libvirt-install-windows-11/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

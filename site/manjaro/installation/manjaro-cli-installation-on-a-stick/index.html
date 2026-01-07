@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Manjaro on a stick - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Manjaro on a stick";
+        var mkdocs_page_input_path = "manjaro/installation/manjaro-cli-installation-on-a-stick.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Manjaro</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../ai/manjaro-folding-at-home/">Manjaro Folding@Home</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Manjaro on a stick</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-04-update-the-smart-way/">Update Manjaro the smart way</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-dns-using-bind-for-local-domain/">Using bind for local domain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-file-sharing-manjaro/">Setting up NFS using Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/ssh-secure-your-ssh-service/">SSH server security</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-arm-wireless-file-service/">ARM wireless Samba file service based on Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-basic-setup-and-troubleshooting/">Basic Samba Setup and Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/virtualbox-headless-windows/">Headless Windows on VirtualBox</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Notes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-fstab/">Store personal files using separate partition (fstab)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Manjaro</li>
+      <li class="breadcrumb-item active">Manjaro on a stick</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="run-manjaro-on-a-stick">Run Manjaro on a stick</h2>
+<p>This is my learning experience - documented for those readers who like the adventure :slight_smile:</p>
+<p>This guide and the resulting USB is intended to run on generic hardware - any <strong>EFI based computer</strong> you may be close to and capable of booting an USB by using the firmware's boot override. You can of course extend this crash guide in any way you want - please - that is why I created it - to be the base for experiments - for learning - for the street credit you gain. </p>
+<p><strong>Please have fun!</strong></p>
+<h2 id="headlines">Headlines</h2>
+<ol>
+<li>Goals</li>
+<li>First steps</li>
+<li>Locate device</li>
+<li>Preparation</li>
+<li>Partitioning</li>
+<li>Formatting</li>
+<li>Mounting</li>
+<li>Base installation</li>
+<li>Configure for USB</li>
+<li>Moment of truth</li>
+<li>Install LXDE</li>
+<li>Add ISO image to Grub</li>
+<li>Package list</li>
+<li>Sources</li>
+</ol>
+<h2 id="1-goals">1. Goals</h2>
+<hr />
+<ol>
+<li>Minimal Manjaro on USB stick - verify boot (<strong>EFI</strong>)</li>
+<li>Data sharing with other systems using exfat</li>
+<li>Extend Manjaro with Lxde using CLI login and startx</li>
+<li>Extend Grub to boot ISO files (Manjaro - Tails)</li>
+</ol>
+<blockquote>
+<p><a href="https://archived.forum.manjaro.org/t/howto-install-manjaro-using-cli-only/108203?u=linux-aarhus">[HowTo] Install Manjaro using CLI</a></p>
+</blockquote>
+<p>I have used a Kingston USB3 device 32G and my test system is an Yepo with Intel J3455, 8GB RAM and USB2 and <a href="http://www.wyae.de/docs/boot-usb3/]">USB3</a>. </p>
+<p>Due to how USB sticks are designed - it may be more feasible to load an ISO and use Manjaro in its unaltered live environment - but let's find out.</p>
+<h2 id="2-first-steps">2. First steps</h2>
+<hr />
+<h3 id="caution">CAUTION</h3>
+<p>You will be doing the following as <strong>root</strong> so in case of device names - do double check your devices.</p>
+<p><strong>DISCLAIMER</strong>: I take no responsibility if you wreck something because you are to quick on the <kbd>Enter</kbd> key.</p>
+<h3 id="change-user">Change user</h3>
+<p>Open a terminal and login as root.</p>
+<pre><code class="language-bash">$ su -l root
+Password: 
+</code></pre>
+<p>I am using a device path <strong>/dev/sdl</strong> through the rest of the guide - replace with your actual device. You can verify which device you are using by removing all USB flash devices. Insert the device you want to use and list your devices. You can recognize the removable device by the number <strong>1</strong> in the <strong>RM</strong> column. </p>
+<h2 id="3-locate-the-device">3. Locate the device</h2>
+<hr />
+<p>It is very important you verify your device path. You will be so sorry if accidentally zap the wrong device.</p>
+<h3 id="sample-device-list">Sample device list</h3>
+<pre><code class="language-bash"># lsblk 
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+...
+sdc      8:32   0 447,1G  0 disk 
+├─sdc1   8:33   0   300M  0 part /boot/efi
+├─sdc2   8:34   0 412,4G  0 part /
+└─sdc3   8:35   0  34,4G  0 part [SWAP]
+...
+sdl      8:176  1  28,8G  0 disk 
+├─sdl1   8:177  1     8G  0 part 
+├─sdl2   8:178  1    20G  0 part 
+└─sdl3   8:179  1 837,5M  0 part 
+...
+</code></pre>
+<h2 id="4-preparation">4. Preparation</h2>
+<hr />
+<p>Wipe the device (double check device path) (for encrypted system use urandom instead of zero's)</p>
+<pre><code class="language-bash"># dd if=/dev/zero of=/dev/sdl bs=4M status=progress
+</code></pre>
+<h2 id="5-partitioning">5. Partitioning</h2>
+<hr />
+<p><strong>IMPORTANT</strong>:
+* The partition types <strong>must</strong> be set.
+* Partitions <strong>must</strong> be created in the following order.
+  (Microsoft expects only one partition on USB - the first)</p>
+<p>Run <em>cfdisk</em> and select <strong>gpt</strong> when prompted.</p>
+<pre><code class="language-bash"># cfdisk --zero /dev/sdl
+</code></pre>
+<ul>
+<li>First (1) partition - 8G</li>
+<li>Partition type: <strong>Microsoft basic data</strong><ul>
+<li>Filesystem <strong>exfat</strong></li>
+</ul>
+</li>
+<li>Second (2) partition - 20G</li>
+<li>Partition type: <strong>Linux root (x86-64)</strong><ul>
+<li>Filesystem <strong>f2fs</strong></li>
+</ul>
+</li>
+<li>Third (3) partition - remaining space<ul>
+<li>Partition type: <strong>EFI System</strong></li>
+<li>Filesystem <strong>fat32</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="6-formatting">6. Formatting</h2>
+<hr />
+<h3 id="partition-1">Partition 1</h3>
+<pre><code class="language-bash"># mkfs.exfat /dev/sdl1
+</code></pre>
+<h3 id="partition-2">Partition 2</h3>
+<pre><code class="language-bash"># mkfs.f2fs /dev/sdl2
+</code></pre>
+<h3 id="partition-3">Partition 3</h3>
+<pre><code class="language-bash"># mkfs.fat -F32 /dev/sdl3
+</code></pre>
+<h2 id="7-mounting">7.  Mounting</h2>
+<p>Mount root</p>
+<pre><code class="language-bash"># mount /dev/sdl2 /mnt
+</code></pre>
+<p>Create the <code>/boot/efi</code> folder</p>
+<pre><code class="language-bash"># mkdir -p /mnt/boot/efi
+</code></pre>
+<p>And mount the EFI partition</p>
+<pre><code># mount /dev/sdl3 /mnt/boot/efi
+</code></pre>
+<h2 id="8-base-installation">8. Base installation</h2>
+<hr />
+<p>Use <strong>section 6 &amp; 7 in the <a href="https://archived.forum.manjaro.org/t/howto-install-manjaro-using-cli-only/108203?u=linux-aarhus">CLI guide</a></strong> to install the base system and return here without exiting the chroot.</p>
+<p><strong>IMPORTANT</strong>: Install <code>f2fs-tools</code> in your root.</p>
+<p>(The complete list of package can be found at the end of the guide.)</p>
+<h2 id="9-configure-for-usb">9. Configure for USB</h2>
+<hr />
+<h3 id="edit-mkinitcpioconf">Edit <em>mkinitcpio.conf</em></h3>
+<blockquote>
+<p>```bash</p>
+<h1 id="nano-etcmkinitcpioconf">nano /etc/mkinitcpio.conf</h1>
+<p><code></code>bash
+MODULES=(f2fs)
+...
+HOOKS="base udev block keyboard autodetect modconf keymap filesystems fsck"
+```
+-- Source: Arch Wiki <a href="https://wiki.archlinux.org/index.php/Mkinitcpio#Common_hooks">Mkinitcpio Common hooks</a></p>
+</blockquote>
+<h3 id="build-initramfs">Build initramfs</h3>
+<pre><code class="language-bash"># mkinitcpio -p linux53
+</code></pre>
+<h3 id="install-grub">Install grub</h3>
+<p><strong>64-bit EFI</strong></p>
+<pre><code class="language-bash"># grub-install --target=x86_64-efi --removable --recheck --boot-directory=/boot --efi-directory=/boot/efi
+</code></pre>
+<p><strong>32-bit EFI</strong></p>
+<pre><code class="language-bash"># grub-install --target=i386-efi --removable --recheck --boot-directory=/boot --efi-directory=/boot/efi
+</code></pre>
+<blockquote>
+<p>-- Source: Arch Wiki <a href="https://wiki.archlinux.org/index.php/GRUB#Installation_2">GRUB Installation part 2</a></p>
+</blockquote>
+<h3 id="create-grub-config">Create grub config</h3>
+<p>Because we are using <strong>f2fs</strong> we need to modify the grub defaults. Later on we also want to show the grub menu for selecting an ISO to load and we do not want that grub menu to disappear too fast.</p>
+<blockquote>
+<p>```bash</p>
+<h1 id="nano-etcdefaultgrub">nano /etc/default/grub</h1>
+<p><code></code>bash
+GRUB_DEFAULT=0
+GRUB_TIMEOUT=-1
+GRUB_TIMEOUT_STYLE=menu
+...
+GRUB_CMDLINE_LINUX_DEFAULT=""
+...</p>
+<h1 id="grub_savedefaulttrue">GRUB_SAVEDEFAULT=true</h1>
+<p>```</p>
+</blockquote>
+<p>Save the file and create grub config</p>
+<pre><code class="language-bash"># grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<h2 id="10-moment-of-truth">10. Moment of truth</h2>
+<hr />
+<p>Close the chroot</p>
+<pre><code class="language-bash"># exit
+</code></pre>
+<h3 id="moment-of-truth">Moment of truth</h3>
+<p>Verify the stick is bootable on another system at hand. Login as root.</p>
+<p>If you are using a cable verify you have  a network connection.</p>
+<pre><code>nmcli device show | grep  IP4
+</code></pre>
+<p>If you need to create a wireless connection launch the Network Manager console</p>
+<pre><code>$ nmtui
+</code></pre>
+<p>If you followed section 6 in the CLI guide to the letter you have a text browser. Use it to test your internet connection</p>
+<pre><code>$ links manjaro.org
+</code></pre>
+<p>If you cannot make a network connection - wireless Broadcom comes to mind - you need to mount the stick in a chroot and install the necessary drivers and then test it again.</p>
+<p>When you have verified the stick works you are ready to continue.</p>
+<h2 id="11-extend-with-lxde">11. Extend with LXDE</h2>
+<hr />
+<p>Next thing is to extend our system from a basic CLI to a basic GUI using only a basic set of packages and a GUI web browser. I have chosen Lxde because it is lightweight, easy to use and Midori because of the small footprint.</p>
+<ul>
+<li><a href="https://archived.forum.manjaro.org/t/howto-install-a-basic-lxde-gui/110139?u=linux-aarhus">[HowTo] Install a basic LXDE</a></li>
+</ul>
+<p>When all packages has been installed
+* in chroot 
+  * exit chroot, unmount the partitions and boot a testing device
+  * <strong>Never just unplug your device</strong> - you will damage the filesystem.
+  * Wait until umount has finished and for eventualities execute the <strong>sync</strong> command.</p>
+<h3 id="reboot">Reboot</h3>
+<p>Restart your system and boot to the stick.</p>
+<p>Login with the new username and launch X</p>
+<pre><code class="language-bash">$ startx
+</code></pre>
+<p>You are now running <strong>Manjaro-on-a-stick</strong> and we can have some more fun.</p>
+<h2 id="12-extend-grub-to-boot-iso-images">12. Extend grub to boot ISO images</h2>
+<hr />
+<p>I am assuming the following</p>
+<ol>
+<li>You have booted the USB stick - it is working.</li>
+<li>You have a running X.</li>
+<li>You have a working internet connection.</li>
+<li>You know how to override your boot sequence.</li>
+<li>You know how to access the grub menu using the <kbd>Shift</kbd> key.</li>
+</ol>
+<p>Most of following be done from the booted USB or using chroot. You may prefer to use a mounted environment to do the editing and copying the ISO to the USB as doing it using the USB's environment maybe to slow for you.</p>
+<p>I have used a root shell and a temporary mount - but you can do as you see fit. If you choose to work directly on the booted USB you will need additional packages installed and adapt the paths used below.</p>
+<h3 id="get-tails">Get Tails</h3>
+<p>Grub can boot ISO image - right off the stick. Let's see if can get Tails to boot.</p>
+<p>Open Midori and download the latest Tails ISO from the <a href="https://tails.boum.org/install/index.en.html">official  website</a>. You find link for the <strong>ISO image</strong> near the bottom of the page. The image is the same for DVD and virtual machines.
+<strong>TIP</strong>: Midori shows no sign of beginning the download. Don't click download but check in the upper right corner of the browser - the download symbol - it should show the progressing download.</p>
+<p><strong>IMPORTANT</strong>: NEVER download Tails from other sources than the official.</p>
+<h3 id="the-iso-folder">The ISO folder</h3>
+<p>When you have downloaded the ISO move the file to a new folder you are about to create in the <code>/boot</code> folder. Execute the following command in the LX terminal emulator.</p>
+<pre><code>sudo mkdir /mnt/boot/isos
+</code></pre>
+<p>Move the file to the new location - we use a wildcard because this guide cannot assume a specific version.</p>
+<pre><code>sudo mv ~/Downloads/tails*.iso /mnt/boot/isos
+</code></pre>
+<p>Verify you actually moved it.</p>
+<pre><code>ls /mnt/boot/isos
+</code></pre>
+<p>You can copy any number of ISO files to your USB - your limit is only the amount of space allocated to your root environment.</p>
+<h3 id="the-grub-configuration">The grub configuration</h3>
+<p>This part makes use of a set of scripts called <strong>multibootusb</strong>. They are available from github user @aguslr (see reference #2) and was brought to my attention some time ago by @AgentS (see reference #3).</p>
+<p>Clone the the multiboot usb repo using git</p>
+<pre><code>git clone https://github.com/aguslr/multibootusb
+</code></pre>
+<p>Copy the configuration files from the multibootusb repo to your USB mount.</p>
+<pre><code>sudo cp -r mbusb.{cfg,d} /mnt/boot/grub
+</code></pre>
+<p><strong>TIP</strong>: The <code>mbusb.cfg</code> can take some time to load. Only use scripts for ISOs you plan to use. In this case I only copied the folders <code>manjaro.d</code> and <code>tails.d</code> - you are free to copy others if you like.</p>
+<p>I have not tested all possibilities - so I don't know if it all works. Please direct multibootiso script issues to the author.</p>
+<p>Create a file on the USB named <em>custom.cfg</em></p>
+<blockquote>
+<p>```</p>
+<h1 id="nano-mntbootgrubcustomcfg">nano /mnt/boot/grub/custom.cfg</h1>
+<p><code></code></p>
+<h1 id="multiboot-iso">========= Multiboot ISO  ==========</h1>
+<h1 id="httpsgithubcomaguslrmultibootusb">https://github.com/aguslr/multibootusb</h1>
+<p>if [ -e "$prefix/mbusb.cfg" ]; then
+ source "$prefix/mbusb.cfg"
+fi
+```</p>
+</blockquote>
+<ul>
+<li>Save the file and close it.</li>
+<li>Then unmount your partition</li>
+<li>Eject the stick</li>
+<li>Boot your test system</li>
+</ul>
+<h3 id="booting-manjaro-iso">Booting Manjaro ISO</h3>
+<p>The boot options for Manjaro works</p>
+<h3 id="booting-tails-iso">Booting Tails ISO</h3>
+<p>The boot options for Tails does not work on my test system - it seems those change from time to time or more likely I am doing something wrong. I have figure out how to make this work.</p>
+<h2 id="13-package-list">13. Package list</h2>
+<p>[details="Complete package list"]</p>
+<blockquote>
+<p>base linux53 dhcpcd networkmanager grub efibootmgr f2fs-tools mkinitcpio vi nano sudo links xorg-server xorg-server-common xorg-xinit xorg-drivers ipw2100-fw ipw2200-fw iw iwd accountsservice engrampa epdfview galculator gnome-keyring gnome-icon-theme gnome-themes-standard gpicview-gtk3 leafpad lxappearance-gtk3 lxde-common lxde-icon-theme lxhotkey-gtk3 lxinput-gtk3 lxlauncher-gtk3 lxmed lxmenu-data lxpanel-gtk3 lxsession-gtk3 lxtask-gtk3 lxterminal manjaro-icons obconf pcmanfm-gtk3 perl-file-mimeinfo xdg-user-dirs xdg-user-dirs-gtk xdg-utils firewalld midori network-manager-applet lxde-wallpapers manjaro-lxde-config manjaro-lxde-desktop-settings manjaro-lxde-logout-banner matcha-gtk-theme manjaro-openbox-matcha papirus-icon-theme papirus-maia-icon-theme ttf-dejavu ttf-roboto xcursor-breeze
+[/details]</p>
+</blockquote>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://archived.forum.manjaro.org/t/howto-install-manjaro-using-cli-only/108203?u=linux-aarhus">Install Manjaro using CLI</a></li>
+<li><a href="https://archived.forum.manjaro.org/t/howto-install-encrypted-manjaro-using-cli/110553?u=linux-aarhus">Install Manjaro using LUKS encryption</a></li>
+<li><a href="https://archived.forum.manjaro.org/t/howto-install-a-basic-lxde-gui/110139?u=linux-aarhus">Install a basic LXDE</a></li>
+<li><a href="https://gitlab.manjaro.org/profiles-and-settings/iso-profiles/tree/master/community/lxde">Manjaro Lxde iso-profile</a> </li>
+<li><a href="https://github.com/aguslr/multibootusb">Grub multiboot script</a></li>
+<li><a href="https://archived.forum.manjaro.org/t/create-a-makeshift-restore-and-iso-booting-partition-with-grub/65370?u=linux-aarhus">Makeshift restore partition</a></li>
+<li><a href="https://tails.boum.org/install/index.en.html">Tails official web</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/GRUB#Installation_2">Arch Wiki - GRUB</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Mkinitcpio#Common_hooks">Arch Wiki - mkinitcpio</a></li>
+<li><a href="https://archived.forum.manjaro.org/t/howto-install-vanilla-gnome/116548?u=linux-aarhus">Install a basic Gnome</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../manjaro-cli-installation-mate-systemd-boot-and-luks/" class="btn btn-neutral float-left" title="Mimick Manjaro Mate using sdboot and luks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../manjaro-cli-installation-systemd-boot-and-luks/" class="btn btn-neutral float-right" title="Manjaro base using sdboot and luks">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../manjaro-cli-installation-mate-systemd-boot-and-luks/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../manjaro-cli-installation-systemd-boot-and-luks/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

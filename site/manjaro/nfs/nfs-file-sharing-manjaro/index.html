@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Setting up NFS using Manjaro - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Setting up NFS using Manjaro";
+        var mkdocs_page_input_path = "manjaro/nfs/nfs-file-sharing-manjaro.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Manjaro</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../ai/manjaro-folding-at-home/">Manjaro Folding@Home</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-on-a-stick/">Manjaro on a stick</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-04-update-the-smart-way/">Update Manjaro the smart way</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-dns-using-bind-for-local-domain/">Using bind for local domain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Setting up NFS using Manjaro</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/ssh-secure-your-ssh-service/">SSH server security</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-arm-wireless-file-service/">ARM wireless Samba file service based on Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-basic-setup-and-troubleshooting/">Basic Samba Setup and Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/virtualbox-headless-windows/">Headless Windows on VirtualBox</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Notes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-fstab/">Store personal files using separate partition (fstab)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Manjaro</li>
+      <li class="breadcrumb-item active">Setting up NFS using Manjaro</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="goal">Goal</h2>
+<hr />
+<p>Sharing data between 2 computer in both directions. We will apply the sharing of the ~/Music folder and we will ensure there is no duplicated data. </p>
+<p>This guide is an application of the <a href="https://wiki.archlinux.org/index.php/NFS">Arch wiki guide to NFS</a></p>
+<h2 id="preparation">Preparation</h2>
+<hr />
+<p>On Manjaro the package providing NFS is <code>nfs-utils</code> and  is installed as part of the system. As the NFS service works using either IP address or hostnames it is a good idea to test if you can ping a computer using its hostname.</p>
+<p>We will use the client/server topology so select a system with a lot of available storage as server - as it makes sense to designate the available storage to as a network share.</p>
+<p>A server needs to be powered up and visible on the network <strong>and</strong> have a predictable address on the network.</p>
+<p>In this guide we assume you are using Network Manager and you set a static IP for your network card. You can use WiFi but it is not as good as a wired connection.</p>
+<p>For this guide we assume
+- network: 192.168.1.0
+- subnet: 255.255.255.0
+- server IP: 192.168.1.20
+- computername: server01</p>
+<h2 id="the-share">The share</h2>
+<hr />
+<p>As we want to avoid duplicating data we will move the relevant folder from the home folder to a designated structure and symlink the data into the home folder.</p>
+<h3 id="create-the-data-structure">Create the data structure</h3>
+<p>On the server create the folder structure and make the share point writable by world - in this example the Music folder.</p>
+<pre><code class="language-bash"># mkdir -p /data/Music
+# chmod ugo+rwx /data/Music
+</code></pre>
+<p>Move the content of the ~/Music folder to the new folder - remove the empty ~/Music folder and symlink it to the new location</p>
+<pre><code class="language-bash">$ mv ~/Music/* /data/Music/
+$ rm -f ~/Music
+$ ln -sf /data/Music ~/Music
+</code></pre>
+<p>Verify it is done right by listing the content of ~/Music</p>
+<pre><code class="language-bash">$ ls ~/Music
+</code></pre>
+<h3 id="create-export-folders">Create export folders</h3>
+<p>To share the folders using NFS we need an export point and the <code>/srv</code> folder is entrypoint. Create a folder to designate this is the NFS service point.</p>
+<pre><code class="language-bash"># mkdir -p /srv/nfs/Music
+</code></pre>
+<h3 id="server-bind-mount">Server bind mount</h3>
+<p>To avoid sharing a location which could expose the system we create a bind mount in the file system table binding the data folder with the nfs export point</p>
+<blockquote>
+<p>/etc/fstab</p>
+</blockquote>
+<pre><code class="language-text">/data/Music /srv/nfs/Music none bind 0 0
+</code></pre>
+<h3 id="mount-without-restart">Mount without restart</h3>
+<p>Remount the mount points using mount</p>
+<pre><code class="language-bash"># mount -a
+</code></pre>
+<h3 id="export-the-shares">Export the shares</h3>
+<p>Edit the file <code>/etc/exports</code> share the root of the NFS and the share itself and access control for the shares.</p>
+<p>NFS works only with IP and/or hostname restrictions so it is possible to restrict further down using only IP addresses or hostnames. The example below adapted from the Arch wiki - tested and tried - it works.</p>
+<p>Additionally you can export the same share multiple times thus limiting access to a specific share to e.g. two devices - if the device uses a dynamic IP you can specifiy hostname and get the same result as if it uses static IP. In the example below we have allowed all computers on the network to connect to the Music share</p>
+<blockquote>
+<p>/etc/exports</p>
+</blockquote>
+<pre><code class="language-text">/srv/nfs            192.168.1.0/24(rw,sync,crossmnt,fsid=0)
+/srv/nfs/Music      192.168.1.0/24(rw,sync)
+</code></pre>
+<h3 id="service">Service</h3>
+<p>Enable and start the service.</p>
+<pre><code class="language-bash"># systemctl enable --now nfs-server.service
+</code></pre>
+<h2 id="client">Client</h2>
+<hr />
+<p>Enable and start the service</p>
+<pre><code class="language-bash"># systemctl enable --now nfs-client.target
+</code></pre>
+<h2 id="mounting">Mounting</h2>
+<hr />
+<h3 id="manual">Manual</h3>
+<p>Using a manual or fstab mount
+- you would create a similar folder structure on the client</p>
+<p>If you choose systemd units - systemd will take care of the folder creation - and all you have to do is symlink the folder when it has been mounted for the first time</p>
+<pre><code class="language-text">fh@ts:~|⇒  tree -L 2 /data
+/data
+└── nfs
+    └── web
+</code></pre>
+<p>Manual mount the folder from the server</p>
+<pre><code class="language-bash">$ sudo mount -t nfs server01:/Music ~/data/nfs/music
+</code></pre>
+<p>Verify the share is up by listing the content of the mount</p>
+<pre><code>$ ls /data/nfs/music
+</code></pre>
+<p>If you want the shared music folder to appear directly as Music on client you can symlink directly to the clients Music folder - just ensure it is empty.</p>
+<pre><code class="language-bash">ln -sf /data/nfs/music ~/Music
+</code></pre>
+<h3 id="mount-using-fstab">Mount using <strong>fstab</strong></h3>
+<p>Using fstab requires the folder structure to present like a manual mount</p>
+<p>The line in fstab could look like this</p>
+<pre><code class="language-text">server01:/nfs/music   /data/nfs/music  nfs auto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+</code></pre>
+<h3 id="using-systemd-units">Using systemd units</h3>
+<p>The folder structure is not required as systemd will create it on first mount.
+The system units are required to be named as the mount path followed by <strong>.mount</strong></p>
+<pre><code class="language-bash"># touch /etc/systemd/system/data-nfs-music.mount
+</code></pre>
+<pre><code class="language-text">[Unit]
+Description=Music
+After=network.target
+
+[Mount]
+What=server01:/nfs/music
+Where=/data/nfs/music
+Type=nfs
+Options=_netdev,auto
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Enable the mount</p>
+<pre><code class="language-bash"># systemctl enable data-nfs-music.mount
+</code></pre>
+<p>Then the automount unit (same name rule)</p>
+<pre><code class="language-bash"># touch /etc/systemd/system/data-nfs-music.automount
+</code></pre>
+<pre><code class="language-text">[Unit]
+Description=Automount music share
+ConditionPathExists=/data/nfs/music
+
+[Automount]
+Where=/data/nfs/music
+TimeoutIdleSec=10
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Before you start the automount unit - ensure the share is not mounted - or the automount will fail.</p>
+<p>Enable and start the automount</p>
+<pre><code class="language-bash"># systemctl enable --now data-nfs-music.automount
+</code></pre>
+<p>Navigate to the folder <code>/data/nfs/music</code> and verify the it has the content from your nfs service.</p>
+<h2 id="conclusion">Conclusion</h2>
+<hr />
+<p>You have now shared your collection of music on your local network. Any change to the ~/Music folder will immediately be reflected on the network.</p>
+<h2 id="background-on-the-chosen-folder-tree">Background on the chosen folder tree</h2>
+<hr />
+<p>On the <em>nix filesystem we have  a location named </em><code>/mnt</code>*. This location is mostly used to mount filesystems to chroot into, make changes and exit. The folder is described as a place for temporary mounts <a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Filesystem Hierachy Standard</a></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/mnt</code></td>
+<td>Temporarily mounted filesystems.</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>The standard also suggests a folder for shared data</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/srv</code></td>
+<td>Site-specific data served by this system, such as data and scripts for web servers, data offered by FTP servers ...</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h2 id="the-sysadmin-recommendation">The SysAdmin recommendation</h2>
+<hr />
+<p>What follows here is my personal experience as a sysadmin and believe me - make it simple - easily memorable - you can thank me later.</p>
+<h3 id="your-data">Your data</h3>
+<p>As a safeguard of your system, the actual data should be located in a separate structure. You will later be adding bind mounts for them.</p>
+<p>The data structure can - as starting point - be anything but sticking to the recognizable - use a distinctive pattern and simple rules</p>
+<ul>
+<li>Partitions mount in folders right below <em>/data/</em></li>
+<li>Shares from other systems in service/folder structure e.g. <em>/data/nfs/data</em></li>
+<li>Move local data to designated folders and use local symlinks to users home e.g. move the <em>~/Music</em> to <em>/data/local/Music</em> and symlink the folder back <em>ln -s /data/local/Music ~/Music</em></li>
+</ul>
+<h3 id="example">Example</h3>
+<p>Starting in <strong>/data/</strong> your structure could look like this</p>
+<pre><code>/data &gt;&gt;&gt; tree -L 2
+.
+├── build
+├── nfs
+│   └── data
+├── smb
+│   └── data
+├── local
+│   ├── Music
+│   └── Video
+├── projects
+└── virtualbox
+</code></pre>
+<p>Mount your partitions using fstab</p>
+<h3 id="your-shares">Your shares</h3>
+<p>For the data you plan to share, create a similar structure using <strong>/srv/</strong> as base.</p>
+<pre><code>/srv &gt;&gt;&gt; tree -L 2
+.
+└── nfs
+     ├── Music
+     └── Video
+</code></pre>
+<p>Add bind mounts to fstab - as bind mounts adds a layer of security to your shares - as you should avoid sharing anything which eventually could be used to traverse the root of your system.</p>
+<pre><code>/data/local/Music /srv/nfs/Music none bind 0 0    
+/data/local/Video /srv/nfs/Video none bind 0 0
+</code></pre>
+<p>To avoid duplication of data you could create a symlink to your home folder - or - in case of indexing utilities like <strong>Albert</strong> which do not follow symlinks you could create an additional bind mount for the user(s) on the system.</p>
+<p>As example - replace username with the actual username for which you would like to make the folder indexable.</p>
+<pre><code>/data/local/Music /home/username/Music none bind 0 0
+</code></pre>
+<h3 id="further-reading">Further reading</h3>
+<p>https://wiki.archlinux.org/index.php/NFS
+https://wiki.archlinux.org/index.php/samba</p>
+<hr />
+<h2 id="windows-nfs-client">Windows NFS Client</h2>
+<hr />
+<p>Based on the comments below - there are options to use Windows as NFS client. The forum do not recommend one solition for another and <strong>do not support</strong> such client.</p>
+<ul>
+<li>Windows 10 PRO and Enterprise Editions supports NFS</li>
+<li>Windows subsystem for Linux</li>
+<li>https://github.com/DeCoRawr/NFSClient/</li>
+</ul>
+<h2 id="revisions">Revisions</h2>
+<ul>
+<li>2020-03-21</li>
+<li>Fix error in mv command</li>
+<li>Added systemd units</li>
+<li>2019-09 Initial guide</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../network/networkmanager-disable-connectivity-check/" class="btn btn-neutral float-left" title="Disable NetworkManager connectivity check"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../nfs-synology-nas/" class="btn btn-neutral float-right" title="Connect to Synology NFS share">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../network/networkmanager-disable-connectivity-check/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../nfs-synology-nas/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

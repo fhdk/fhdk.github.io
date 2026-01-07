@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Update Manjaro the smart way - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Update Manjaro the smart way";
+        var mkdocs_page_input_path = "manjaro/maintenance/manjaro-maintenance-04-update-the-smart-way.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Manjaro</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../ai/manjaro-folding-at-home/">Manjaro Folding@Home</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-on-a-stick/">Manjaro on a stick</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Update Manjaro the smart way</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-dns-using-bind-for-local-domain/">Using bind for local domain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-file-sharing-manjaro/">Setting up NFS using Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/ssh-secure-your-ssh-service/">SSH server security</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-arm-wireless-file-service/">ARM wireless Samba file service based on Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-basic-setup-and-troubleshooting/">Basic Samba Setup and Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/virtualbox-headless-windows/">Headless Windows on VirtualBox</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Notes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-fstab/">Store personal files using separate partition (fstab)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Manjaro</li>
+      <li class="breadcrumb-item active">Update Manjaro the smart way</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>linux-aarhus | 2022-10-07 09:16:16 UTC | Source: <a href="https://forum.manjaro.org/t/root-tip-how-to-update-manjaro-the-smart-way/30979">Update Manjaro the smart way</a></p>
+<h2 id="manjaro-updates">Manjaro updates</h2>
+<hr />
+<p>Either when you use your system or shortly after login - a message appears - telling you there is updates available. When you click the message Pamac opens with the updates pane listing 100's of packages ready to download/install on your system. </p>
+<p>Almost per instinct you click the update now - provide your password and the flow begin. </p>
+<p>Suddenly your screen goes blank - you wait - nothing happens. </p>
+<p>You press <kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>F4</kbd> to access TTY - nothing happens - you wait - nothing happens. </p>
+<p>Without giving much thought to it - you hold the power button until the system powers off and press it again to power on your system - and now you are having a black screen maybe a message .... unless your system is not booting at all !</p>
+<p>What now? Could the situation have been  avoided?</p>
+<p>While - of course - there is no guarantee - the following headlines may help you understand what goes on behind the scenes.</p>
+<ol>
+<li>Know your system</li>
+<li>What happens when you update</li>
+<li>What happens and why when an update stalls</li>
+<li>Updating the smart way</li>
+<li>Conclusion</li>
+</ol>
+<h2 id="know-your-system">Know your system</h2>
+<hr />
+<p>There is a few packages - which when updated most likely will require a restart. A short list of important system packages which probably requires restart</p>
+<ul>
+<li>ucode</li>
+<li>cryptsetup</li>
+<li>linux</li>
+<li>nvidia</li>
+<li>mesa</li>
+<li>systemd</li>
+<li>wayland</li>
+<li>xf86-video</li>
+<li>xorg</li>
+</ul>
+<p>Another part of knowing your system is which foreign packages you have installed. Foreign packages is defined as everything not in the official repository so keeping a list of packages installed by an AUR helper or using <code>makepkg -i</code> will be of help when you update your system.</p>
+<p>Before you update - you can query pacman for the list - pipe it to a text file for later referral</p>
+<pre><code class="language-bash">$ pacman -Qm &gt; ~/aur-pkglist.txt &amp;&amp; xdg-open aur-pkglist.txt
+</code></pre>
+<h3 id="package-download">package download</h3>
+<p>The way pacman works - using the alpm library - is to download the packages and verify by signatures - and when a package validation fail - the transaction will be not committed.</p>
+<p>This ensures no updates are written to the system if the internet connects is severed as the update will be cancelled unless all packages required is available in the local package cache.</p>
+<h3 id="pacman-hooks">pacman hooks</h3>
+<p>A part of knowing your system is to understand how the alpm library applies the updates.</p>
+<p>Many packages - especially system packages - makes use of hooks to process changes during an update.</p>
+<p>If a package update is not fully completed - eg. your system loses power during update - the post-update hooks are not executed - and bad things can happen - what actually happens depends on the package and the hooks implemented.</p>
+<h2 id="what-happens-on-update">What happens on update?</h2>
+<hr />
+<p>Most of us has been using Windows and we know from Windows that system files may be locked so the system must be restarted so the file can be replaced with the updated versions.</p>
+<p>Due to the modularity of Linux only needed parts of an application is loaded into memory and the rest is loaded on as-needed-basis - and this includes kernel, kernel modules and drivers.</p>
+<h2 id="custom-packages">Custom packages</h2>
+<p>When you build a custom package using an AUR helper, the package is built using the - at build time - available system libraries. </p>
+<p>When you update your system - you may be replacing those dependencies with new libraries - and such replacement may cause instability or outright failure of your custom package - especially when your custom packages depends on a specific kernel release.</p>
+<p>When you reboot your system after an update the system will use new modules and any application or device relying on a custom kernel module will fail because the module has not been rebuilt.</p>
+<p>Only after a successful update and a successful restart you can begin to update your custom modules.</p>
+<h3 id="custom-themes">custom themes</h3>
+<p>Themes is not only a bunch of color definitions and icons.</p>
+<p>Gnome (GTK+) and Plasma (QT+) themes is high level code integrating with the tool kit using tool kit specific definitions, code abstraction even javascript.</p>
+<p>This makes applications prone to errors when themes are not maintained to match the next release of the tool kit. </p>
+<p>Such maintenance may appear tedious but nonetheless - a non maintained theme may break the system - most notably the display manager most notably <strong>gdm</strong> for Gnome and <strong>sddm</strong> for Plasma but also toolbars, extensions and plasmoids may exhibit erratic behavior.</p>
+<h2 id="what-happens-when-an-update-stalls">What happens when an update stalls?</h2>
+<hr />
+<p>The following is a simplified description - of what may happen.</p>
+<p>When you run huge updates within the graphical environment - whether you use a terminal or a gui package manager - the system may end in a state where it needs to load a specific library at a specific memory address pointing at a specific routine in the library - but due to updates - the library is no longer existing - it has been updated to a never version - and your update stalls.</p>
+<h2 id="updating-the-smart-way">Updating the smart way</h2>
+<hr />
+<p>Before major updates, it is wise to - temporarily </p>
+<ul>
+<li>Gnome </li>
+<li>disable extensions </li>
+<li>revert to default shell theme</li>
+<li>revert to default theme</li>
+<li>Plasma</li>
+<li>revert to the default global theme (Breeze/Breath) (include desktop layout)</li>
+<li>revert display manager (sddm) to the default theme (Breeze/Breath).</li>
+</ul>
+<p>Updating the smart way includes knowing which packages may pose a problem if the update is run with the GUI. I showed you a list of packages which by a lot of users experience often requires special attention.</p>
+<p>When Pamac shows you a huge list of update - it can be hard to get a clear view and you could miss one.</p>
+<p>You can use a small <a href="https://forum.manjaro.org/t/root-tip-check-if-updates-may-require-system-restart/14112">utility script</a> simplifying the task of evaluating a huge list of updates.</p>
+<p>When you have evaluated the list and found this update to have the potential to stall - the smart way is to update using the console. Logout of your GUI and switch to TTY.</p>
+<h3 id="dont-ever-interrupt-the-process">Don't ever interrupt the process</h3>
+<p>Don't ever interrupt the process - intentionally or unintentionally.</p>
+<p>Ensure you are not doing your update when your area are known to power spike,  or during stormy weather which can cause interruptions to the power grid - if your system loses power you will probably have a problem getting it back up and runnning.</p>
+<h3 id="ensure-mirror-is-up-to-date">Ensure mirror is up-to-date</h3>
+<p>Before syncronizing your system optionally ensure your primary mirror is up-to-date</p>
+<pre><code class="language-bash">$ pacman-mirrors
+Pacman-mirrors version 4.16.4
+Local mirror status for unstable branch
+Mirror #1   OK  00:31   Denmark  https://www.uex.dk/public/manjaro/
+</code></pre>
+<h3 id="ensure-enough-diskspace">Ensure enough diskspace</h3>
+<p>If you don't regularly clean up you system - now is a good time</p>
+<p>Remove old entries from the journal (reduce the size to 50M)</p>
+<pre><code class="language-bash">$ sudo journalctl --vacuum-size=50M
+</code></pre>
+<p>Cleanup your pacman cache (this will remove uninstalled packages and reduce pkg versions to the installed version)</p>
+<pre><code class="language-bash">$ sudo paccache -ruk0
+</code></pre>
+<h3 id="updating">Updating</h3>
+<p>Logout of your GUI and switch to TTY- <kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>F4</kbd> and run the update. Depending on the result you may proceed to update the system</p>
+<p>If you are using <strong>dkms</strong> based drivers - ensure they are rebuild without errors.</p>
+<pre><code class="language-bash">$ sudo pacman -Syu
+</code></pre>
+<p>If you need to rebuild your mirror list - you will need to use below variation of the update command - forcing your system package database to equal your primary mirror's databases and as pointed to by @cscs Pamac has a timer - rebuilding your mirror list on a regular base - in which case this command should be favored.</p>
+<pre><code class="language-bash">$ sudo pacman -Syyu
+</code></pre>
+<p>When you reboot after a successful update - first thing to do is rebuilding your foreign packages and drivers. This can be done from a terminal in the GUI session - but if you want to ensure you get no problems - TTY is recommended <kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>F4</kbd>. </p>
+<p>Depending on your environment, you switch back to GUI using <kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>F7</kbd> or if your displaymanager is SDDM <kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>F1</kbd></p>
+<p>Rebuilding all your AUR packages using a single command e.g.</p>
+<pre><code class="language-bash">$ pamac upgrade -a
+</code></pre>
+<h2 id="after-succesful-sync">After succesful sync</h2>
+<p>Reapply your custom theming and give yourself a :clap:  - you deserve it.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Following a few basic rules will help you keep your system healthy and hopefully you will avoid problems from a stalled update.</p>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../manjaro-maintenance-03-aur-restrain-yourself/" class="btn btn-neutral float-left" title="AUR - please restrain yourself"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../manjaro-update-practise/" class="btn btn-neutral float-right" title="Smart Manjaro system update">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../manjaro-maintenance-03-aur-restrain-yourself/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../manjaro-update-practise/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

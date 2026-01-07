@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Basic Samba Setup and Troubleshooting - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Basic Samba Setup and Troubleshooting";
+        var mkdocs_page_input_path = "manjaro/samba/samba-basic-setup-and-troubleshooting.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Manjaro</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../ai/manjaro-folding-at-home/">Manjaro Folding@Home</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-on-a-stick/">Manjaro on a stick</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-04-update-the-smart-way/">Update Manjaro the smart way</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-dns-using-bind-for-local-domain/">Using bind for local domain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-file-sharing-manjaro/">Setting up NFS using Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/ssh-secure-your-ssh-service/">SSH server security</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-arm-wireless-file-service/">ARM wireless Samba file service based on Arch</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Basic Samba Setup and Troubleshooting</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#content">Content</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-can-you-learn-from-this">What can you learn from this?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#occasional-sharing">Occasional sharing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#python-httpserver">Python http.server</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#simple-http-servers">Simple http servers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#samba-client">Samba Client</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#smbclient">smbclient</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gvfs">GVFS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#system-automount">System Automount</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#systemd-units">systemd units</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#user-mount">User Mount</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#user-automount">User Automount</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-user-service">The user service</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#manjaro-samba-server">Manjaro Samba Server</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#secure-your-service">Secure your service</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#install-samba-package">Install samba package</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-server-configuration">Basic Server configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#test-your-config">Test your config</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create-share-and-set-permissions">Create share and set permissions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#start-the-services">Start the services</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#access-control-lists-aka-acl">Access Control Lists aka ACL</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#apparmor-when-serving-samba-shares">AppArmor when serving samba shares</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#client">Client</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#browse-available-shares">Browse available shares</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#initial-share-lookup">Initial share lookup</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#samba-protocol-version">Samba protocol version</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arch-wiki">Arch Wiki</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#more-reading">More reading</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/virtualbox-headless-windows/">Headless Windows on VirtualBox</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Notes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-fstab/">Store personal files using separate partition (fstab)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Manjaro</li>
+      <li class="breadcrumb-item active">Basic Samba Setup and Troubleshooting</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><strong>Difficulty: ★★☆☆☆</strong></p>
+<h1 id="what-is-samba">What is SAMBA</h1>
+<blockquote>
+<p>Samba is the standard Windows interoperability suite of programs for Linux and Unix.</p>
+</blockquote>
+<h2 id="content">Content</h2>
+<ul>
+<li>[Occasional sharing][100]</li>
+<li>[Samba Client][110]</li>
+<li>[GVFS][120]</li>
+<li>[System Automount][130]</li>
+<li>[User Mount][140]</li>
+<li>[User Automount][150]</li>
+<li>[User Service][151]</li>
+<li>[Manjaro Samba Server][160]</li>
+<li>[Troubleshooting][170]</li>
+<li>[References][180]</li>
+</ul>
+<h2 id="what-can-you-learn-from-this">What can you learn from this?</h2>
+<p>This document from my <a href="https://root.nix.dk/en/network-notes/basic-samba-setup-and-troubleshooting">notepad</a> is intended as a help to setup <strong>simple</strong> client connection to <strong>home NAS</strong> and simple file sharing from your Manjaro desktop to other computers in your <strong>home network</strong>. If you are looking for domain specific setup and integration to Microsoft AD you must refer to the official samba documentation<sup>[[1]]</sup>. </p>
+<h2 id="occasional-sharing">Occasional sharing</h2>
+<hr />
+<h3 id="python-httpserver">Python http.server</h3>
+<p>If you only occasionally need to serve files - you can do so using the default Python installation.</p>
+<p>Copy the files to you want to share to <strong>~/Public</strong> then open a terminal in the folder and run two commands. </p>
+<p>The first displays your IP address <sup>[utility script [2]]</sup></p>
+<pre><code>~/Public $ check-network
+192.168.30.20
+</code></pre>
+<p>The second run the http service exposing the content of your <code>~/Public</code> folder</p>
+<pre><code>~/Public $ python -m http.server -d ~/Public  8080 
+Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...
+</code></pre>
+<p>Then share the IP and port. The person(s) can fetch the file(s) using their browser and navigating to - the slash at the end is important (otherwise the browser runs a search using the configured searchengine)</p>
+<pre><code>http://$IPADDRESS:8080/
+</code></pre>
+<p>When you are finished sharing, close the terminal or press <kbd>Ctrl</kbd><kbd>c</kbd> to stop sharing.</p>
+<h3 id="simple-http-servers">Simple http servers</h3>
+<p>Packages such as <strong>darkhttpd</strong> and <strong>caddy</strong> provides webservers to service static files and can be installed from the repo.</p>
+<p>The <strong>caddy</strong> package also provides a SSL/TLS enabled server.</p>
+<h2 id="samba-client">Samba Client</h2>
+<hr />
+<p>For simple client connection to shares provided by a NAS or maybe your router only a few packages are needed. The package <code>smbclient</code> provides the tools necessary for accessing samba fileshares.</p>
+<p>There is several packages which builds upon the client and makes it easier to connect and automount a share from a file manager. Packages such as <code>gvfs-smb</code> and <code>smb4k</code> extends the file manager with seamless mount of Samba shares.</p>
+<p>Ensure the packages are up-to-date by running below command in a terminal</p>
+<pre><code>sudo pacman -Syu smbclient gvfs gvfs-smb --needed
+</code></pre>
+<h3 id="smbclient">smbclient</h3>
+<p>Before attempting a connection either reboot your system or manually load the kernel module</p>
+<pre><code>sudo modprobe cifs
+</code></pre>
+<p>Also a configuration file <code>/etc/samba/smb.conf</code> must be present. The client doesn't require any content - just the presence and can thus be created by the <code>touch</code> utility.</p>
+<pre><code>sudo mkdir /etc/samba
+sudo touch /etc/samba/smb.conf
+</code></pre>
+<h2 id="gvfs">GVFS</h2>
+<hr />
+<p>Open your file manager and enter the server name or IP address in location bar. </p>
+<p>If the location bar is not visible it is often activated using the hot key-combo <kbd>Ctrl</kbd><kbd>L</kbd>. Input the server name and share using the protocol format</p>
+<pre><code class="language-text">smb://server-name/share
+</code></pre>
+<p>Some file managers (e.g. dolphin) can better deduct if credentials are required if the username is supplied like this</p>
+<pre><code class="language-text">smb://username@server-name/share
+</code></pre>
+<p>When you are challenged for credentials input those to access the content. Do not save your credentials just yet. Later on you will return here  to store the credentials in  your keyring.</p>
+<p>This method is using gvfs which creates the mountpoint in the <strong>/run</strong> tree and therefore the mount will not persist across reboot. </p>
+<p>You can inspect the file structure by opening the folder matching the uid for your user. If you have a mounted share you can run <code>ls</code> on the gvfs folder - it will yield an output similar to below example</p>
+<pre><code>$ ls /run/user/$UID/gvfs
+'smb-share:server=nas.net.nix.dk,share=data'
+</code></pre>
+<h2 id="system-automount">System Automount</h2>
+<hr />
+<h3 id="systemd-units">systemd units</h3>
+<p>When mounting one or more network shares on boot one need to take into account when the network is up and connected - otherwise the system will hang for 90s for each share.</p>
+<p>This can be done using fstab or using systemd units <sup>[[ systemd unit ][3]] [[ sample units ][4]]</sup>.</p>
+<h2 id="user-mount">User Mount</h2>
+<p>As demonstrated, a file manager can utilize gvfs to create a user mounted samba share, and this knowledge can used in creating some automation.</p>
+<p>As shown the gio mountpoint takes the following form where <code>$UID</code>, <code>$HOST</code> and <code>$SHARE</code> represents the variable factors</p>
+<pre><code>/run/user/$UID/gvfs/'smb-share:server=$HOST,share=$SHARE'
+</code></pre>
+<p>We will use the <strong><a href="https://forum.manjaro.org/t/root-tip-utility-script-gio-mount-samba-share/100723?u=linux-aarhus">gio smb mount</a></strong> script to mount the share. Use the template provided in the topic to create your own script. When you have the script in place and working come back here.</p>
+<p>The script asks for username, workgroup and password when you run it and that is fine for the occasional mount but you will likely want to automount the share when you log onto your system.</p>
+<h2 id="user-automount">User Automount</h2>
+<p>The script can be executed at login in a number of ways - but remember - the script's success depends on the credentials being available in your keyring.</p>
+<ul>
+<li>Adding the script to your environment's autostart configuration</li>
+<li>Manually creating a desktop launcher in <code>~/.config/autorun</code></li>
+</ul>
+<p>This topic will propose a somewhat different method by means of a <strong>systemd user service</strong> which will be used to execute our script upon login.</p>
+<p>:spiral_notepad: To be able to automount the share you can</p>
+<p><strong>Either</strong>
+* Stored the credentials in your keyring when challenged by the file manager.</p>
+<p><strong>Or</strong>
+* Store the credentials in the mount script mentioned above</p>
+<h2 id="the-user-service">The user service</h2>
+<p>Create the folder <code>~/.config/systemd/user</code> and create a service file named e.g. <code>gio-smb-share-name.service</code> - use the same name as the script you are calling - thus making the dependency obvious and simplify future maintenance.</p>
+<pre><code>mkdir -p ~/.config/systemd/user
+touch ~/.config/systemd/user/gio-smb-share-name.service
+</code></pre>
+<p>Open the file in your favorite editor and paste below content.</p>
+<pre><code>[Unit]
+Description=GIO mount smb share-name
+
+[Service]
+Type=oneshot
+ExecStart=/home/%u/.local/bin/gio-smb-share-name.sh
+ExecStop=/home/%u/.local/bin/gio-smb-share-name.sh -u
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Watch your SMBLinks folder and start the service</p>
+<pre><code>systemctl --user start gio-smb-share-name.service
+</code></pre>
+<p>Note the symlink is created. Stop the service to watch the symlink disappear</p>
+<pre><code>systemctl --user stop gio-smb-share-name.service
+</code></pre>
+<p>When everything works - start and enable the user service</p>
+<pre><code>systemctl --user enable --now gio-smb-share-name.service
+</code></pre>
+<h2 id="manjaro-samba-server">Manjaro Samba Server</h2>
+<hr />
+<p>:warning: 
+1. Sharing data will <strong>open ports to the network</strong>. 
+2. Only run a Samba file service on a <strong>trusted secure network or zone</strong>.
+3. <strong>Ensure firewalld</strong> is set up to only allow share traffic when connected to a trusted and secure network or zone.
+4. <strong>Never</strong> run a samba file server on a public network.
+5. <strong>Avoid NT1 aka SMB1</strong> - it is unsafe and exploited by numerous ransomware projets.</p>
+<h3 id="secure-your-service">Secure your service</h3>
+<p>if you are using another firewall service (e.g. ufw) either setup that service to allow samba and skip this step <strong>or</strong> stop and disable the service before continuing.</p>
+<p>Install the package <strong>firewalld</strong> then enable and start the service.</p>
+<pre><code>sudo pacman -Syu firewalld
+sudo systemctl enable --now firewalld
+</code></pre>
+<p>firewalld has some predefined zones which we will use for this purpose to define trusted and untrusted network. If a network is not defined in any zones it is treated as <strong>public</strong> which means visible on the network and no open ports</p>
+<ul>
+<li>home</li>
+<li>public</li>
+</ul>
+<p>When you are connected to what you deem a trusted and secure network run the following command</p>
+<pre><code>nmcli device show | grep IP4.ROUTE
+IP4.ROUTE[1]:             dst = 192.168.1.0/24, nh = 0.0.0.0, mt = 100
+IP4.ROUTE[2]:             dst = 0.0.0.0/0, nh = 192.168.1.1, mt = 100
+</code></pre>
+<p>In this example note the first destination network; <strong>192.168.1.0/24</strong>. This it a common network used by many home routers. Your result may be different - adjust accordingly.</p>
+<p>Before you begin - list the default services permanently enabled for the zones</p>
+<pre><code>sudo firewall-cmd --permanent --zone=&quot;home&quot; --list-services
+sudo firewall-cmd --permanent --zone=&quot;public&quot; --list-services
+</code></pre>
+<p>Next step is to to tell the firewall this network is trusted - replace the variable with your network (note it is possible to have more than one trusted network - eg. home and work)</p>
+<pre><code>sudo firewall-cmd --permanent --zone=&quot;home&quot; --add-source=&quot;$NETWORK&quot;
+</code></pre>
+<p>Example using above </p>
+<pre><code>sudo firewall-cmd --permanent --zone=&quot;home&quot; --add-source=&quot;192.168.1.0/24&quot;
+</code></pre>
+<p>Next we define the policy for the samba service</p>
+<pre><code>sudo firewall-cmd --permanent --zone=&quot;home&quot; --add-service=&quot;samba&quot;
+</code></pre>
+<p>With the security in place proceed to installing and configuring Samba</p>
+<h3 id="install-samba-package">Install samba package</h3>
+<p>Install the samba package and ensure your system is fully updated in the process.</p>
+<pre><code class="language-text">sudo pacman -Syu samba
+</code></pre>
+<h3 id="basic-server-configuration">Basic Server configuration</h3>
+<p>Create the configuration file <strong>/etc/samba/smb.conf</strong> - the folder may need to be created beforehand.</p>
+<pre><code class="language-text">sudo mkdir -p /etc/samba
+sudo touch /etc/samba/smb.conf
+</code></pre>
+<p>Edit the file - using superuser privilige - insert below content and save the file (need superuser). If you are connecting an existing network of servers change the WORKGROUP to match the existing network. </p>
+<pre><code class="language-text">[global]
+   workgroup = MANJARO
+   server string = Manjaro Samba Server
+   server role = standalone server
+   log file = /var/log/samba/log.%m
+   max log size = 50
+   guest account = nobody
+   map to guest = Bad Password
+
+   min protocol = SMB2
+   max protocol = SMB3
+
+[public]
+   path = /srv/samba/share-name
+   public = yes
+   writable = yes
+   printable = no
+
+</code></pre>
+<h3 id="test-your-config">Test your config</h3>
+<pre><code class="language-text">sudo testparm /etc/samba/smb.conf
+</code></pre>
+<h3 id="create-share-and-set-permissions">Create share and set permissions</h3>
+<p>To share e.g. removable devices you need to mount the devices. </p>
+<p>This is best done using using systemd mount and if removable create both mount and automount unit.</p>
+<ul>
+<li>https://forum.manjaro.org/t/root-tip-use-systemd-to-mount-any-device/1185</li>
+</ul>
+<p>Create the shared folder</p>
+<pre><code class="language-text">sudo mkdir -p /srv/samba/share-name
+</code></pre>
+<p>Set permissions to any and all</p>
+<pre><code class="language-text">sudo chmod -R ugo+rw /srv/samba/share-name
+</code></pre>
+<h3 id="start-the-services">Start the services</h3>
+<pre><code class="language-text">sudo systemctl enable --now smb nmb
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<hr />
+<p>Did you remember to add users to the service? </p>
+<p>Samba users can be added independently from system users by using</p>
+<pre><code>smbpasswd -a $USERNAME
+</code></pre>
+<ul>
+<li>Samba documentation on https://www.samba.org/samba/docs/current/man-html/smbpasswd.8.html</li>
+</ul>
+<h3 id="access-control-lists-aka-acl">Access Control Lists aka <a href="https://wiki.archlinux.org/title/Access_Control_Lists">ACL</a></h3>
+<p>Missing r/w access due to permissions. In essence, it was similar to <a href="https://www.spinics.net/lists/samba/msg173272.html">this issue</a>. Simple solution is to remove your share and create it again. And no need to change <code>tdbsam</code> to <code>smbpasswd</code>. -- Credit @openminded </p>
+<h3 id="apparmor-when-serving-samba-shares">AppArmor when serving samba shares</h3>
+<p>Some eitions of Manjaro comes with AppArmor enabled (snap support) which may lead to issues when samba is updated. In such case you can use the following quick fix</p>
+<pre><code>sudo aa-complain /etc/apparmor.d/usr.sbin.smbd
+</code></pre>
+<p>Now proceed to reading <a href="https://wiki.archlinux.org/title/AppArmor">documentation on AppArmor</a> especially the section on <a href="https://wiki.debian.org/AppArmor/HowToUse">editing AppArmor profiles</a> for a better and more long-term solution. -- Credit @openminded </p>
+<p>On [date=2022-09-03 timezone="Europe/Copenhagen"] @0xbeaf contributed this <a href="https://forum.manjaro.org/t/cant-connect-to-samba-after-update-service-is-running-2022-08-13/119396/69">comment</a> on another topic and has been added here to complement this section.</p>
+<blockquote>
+<ul>
+<li>Changes to how <code>samba</code> does <a href="https://gitlab.com/apparmor/apparmor/-/merge_requests/871">rpc seems</a> to be the main culprit. Since it is using multiple new executable files to delegate its jobs, new profiles and overrides for <code>apparmor</code> needs to be added.</li>
+<li>I had to add override rules for <code>usr.sbin.smbd</code>, <code>samba-dcerpcd</code>, <code>samba-rpcd</code> and <code>samba-rpcd-classic</code>.</li>
+<li>To get rid of all <strong>DENIED</strong> error messages in <code>apparmor</code> log, I had to add one more entity to profile rules. E.g. to whitelist the path <code>/tank/anbaar</code>, I added the following to all above-mentioned profiles in <code>/etc/apparmor.d/local</code>:</li>
+</ul>
+<p><code>ini
+/tank/anbaar lrwk,
+/tank/anbaar/ lrwk,
+/tank/anbaar/** lrwk,</code>
+* Additionally, <code>/usr/share/samba</code> and <code>/var/cache/samba</code> had to be whitelisted for <code>samba-rpcd</code> so <code>avahi</code> service could properly work with a macOS machine so that it could automatically find and mount the TimeMachine share-points!!!</p>
+<p>Helpful links:</p>
+<ol>
+<li>https://ubuntu.com/server/docs/security-apparmor</li>
+<li>https://gitlab.com/apparmor/apparmor/-/wikis/AppArmor_Core_Policy_Reference</li>
+<li>https://bugs.archlinux.org/task/74614</li>
+<li>https://gitlab.com/apparmor/apparmor/-/merge_requests/871</li>
+</ol>
+</blockquote>
+<h3 id="client">Client</h3>
+<p>Samba client requires the file <code>/etc/samba/smb.conf</code> even if it is empty.</p>
+<pre><code>sudo mkdir -p /etc/samba
+sudo touch /etc/samba/smb.conf
+</code></pre>
+<h3 id="browse-available-shares">Browse available shares</h3>
+<p><strong>It is not possible to browse shares by using the service name</strong></p>
+<p>SMB1 has been removed for security reasons. This also removed the possibliity to browse a server for avaliable shares.</p>
+<p>The removal enhances the resistance against ransomware and other malware propagating over the network.</p>
+<pre><code>$ smbclient -L {host|ip} -U%
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        public          Disk      
+        IPC$            IPC       IPC Service (Manjaro Samba Server)
+SMB1 disabled -- no workgroup available
+</code></pre>
+<p>Netbios requests has been disabled due to the vulnerabilities thus highly improving restance against ransomware abusing the service to spread itself.</p>
+<p>Always connect to the share directly</p>
+<pre><code>smbclient //{host|ip}/public
+</code></pre>
+<p>Using a file manager you may need to add username to the request e.g. <strong>smb://username@service/sharename</strong> and provide the password. Only then you will be able to see what other shares the service provides.</p>
+<h3 id="initial-share-lookup">Initial share lookup</h3>
+<p>If you find browsing the network from your filemanager is not possible issues it may be helpful to add the following content - replace the WORKGROUP if necessary</p>
+<pre><code>[global]
+    workgroup = WORKGROUP
+</code></pre>
+<p>You may get messages like</p>
+<blockquote>
+<p>Failed to retrieve share list from server: No such file or directory
+The specified location is not mounted</p>
+</blockquote>
+<h3 id="samba-protocol-version">Samba protocol version</h3>
+<p>Upstream Samba disabled SMB1 due to a vulnerability exploited by a widespread ransomware. Yet many ISP provided routers has not been upgraded and you may have difficulties connecting the router's samba service using a default samba client.</p>
+<p>To gain access to such share you need to add a samba configuration which sole purpose is to enable the deprecated samba version. Add the following line in the [global] section of the configuration file</p>
+<pre><code>[global]
+    client min protocol = NT1
+</code></pre>
+<h3 id="arch-wiki">Arch Wiki</h3>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/Samba#NetBIOS/WINS_host_names">WINS host names</a></li>
+<li><a href="https://wiki.archlinux.org/title/Samba#Manual_mounting">Manual Mountiing</a> </li>
+</ul>
+<blockquote>
+<p>The options <code>uid</code> and <code>gid</code> corresponds to the local (e.g. client) <a href="https://wiki.archlinux.org/title/User">user</a>/<a href="https://wiki.archlinux.org/title/User_group">user group</a> to have read/write access on the given path.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>If the <code>uid</code> and <code>gid</code> being used does not match the user of the server, the <code>forceuid</code> and <code>forcegid</code> options may be helpful. However note permissions assigned to a file when <code>forceuid</code> or <code>forcegid</code> are in effect may not reflect the the real (server) permissions. See the <em>File And Directory Ownership And Permissions</em> section in <a href="https://man.archlinux.org/man/mount.cifs.8#FILE_AND_DIRECTORY_OWNERSHIP_AND_PERMISSIONS">mount.cifs(8) § FILE AND DIRECTORY OWNERSHIP AND PERMISSIONS</a> for more information.</li>
+<li>To mount a Windows share without authentication, use <code>"username=*"</code>.</li>
+</ul>
+<p><strong>Warning:</strong> Using <code>uid</code> and/or <code>gid</code> as mount options may cause I/O errors, it is recommended to set/check correct <a href="https://wiki.archlinux.org/title/File_permissions_and_attributes">File permissions and attributes</a> instead.
+-- Arch Wiki</p>
+</blockquote>
+<h2 id="more-reading">More reading</h2>
+<hr />
+<ul>
+<li>My notepad <sup>[[0]]</sup></li>
+<li>Samba website <sup>[[1]]</sup></li>
+<li>LAN IP utility script <sup>[[2]]</sup></li>
+<li>Using systemd mount units <sup>[[3]]</sup></li>
+<li>Sample mount units <sup>[[4]]</sup></li>
+<li>Samba on Arch Wiki <sup>[[5]]</sup></li>
+<li>Sample Samba configuration with comments <sup>[[6]]</sup></li>
+<li>Microsoft's documentation <sup>[[7]]</sup></li>
+<li>GIO mount SMB utility script <sup>[[8]]</sup></li>
+<li>AppArmor Arch Linux Wiki <sup>[[13]]</sup></li>
+</ul>
+<!-- external links -->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../samba-arm-wireless-file-service/" class="btn btn-neutral float-left" title="ARM wireless Samba file service based on Arch"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../samba-from-scratch/" class="btn btn-neutral float-right" title="Samba From Scratch">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../samba-arm-wireless-file-service/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../samba-from-scratch/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

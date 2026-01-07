@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Using bind for local domain - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Using bind for local domain";
+        var mkdocs_page_input_path = "manjaro/network/network-dns-using-bind-for-local-domain.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Manjaro</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../ai/manjaro-folding-at-home/">Manjaro Folding@Home</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-on-a-stick/">Manjaro on a stick</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-04-update-the-smart-way/">Update Manjaro the smart way</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Using bind for local domain</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-file-sharing-manjaro/">Setting up NFS using Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/ssh-secure-your-ssh-service/">SSH server security</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-arm-wireless-file-service/">ARM wireless Samba file service based on Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-basic-setup-and-troubleshooting/">Basic Samba Setup and Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/virtualbox-headless-windows/">Headless Windows on VirtualBox</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Notes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-fstab/">Store personal files using separate partition (fstab)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Manjaro</li>
+      <li class="breadcrumb-item active">Using bind for local domain</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="network-configuration">Network configuration</h2>
+<p>Difficulty: ★★★★★</p>
+<h2 id="serving-a-local-network">Serving a local network</h2>
+<hr />
+<p>Resolving local network devices can be a pain because the name query is often forwarded to root nameservers or ISP cache servers  which returns NXDOMAIN. </p>
+<p>To create a robust LAN whether it is for home  or small business use you need an internet facing domain which access to DNS control panel. These notes uses bind on a Raspberry Pi running the default Raspberry Pi OS.</p>
+<p>!! <strong>DO NOT</strong><br />
+!! .local is used with the AVAHI zeroconf specification. Do not invent you own .lan or something similar - the result will not be as expected.</p>
+<p>!!! <strong>REQUIRED</strong><br />
+!!! Experience with terminal is mandatory as all setup is done using a SSH connection and any error will break your connection. Knowledge of DNS, zone files and dhcp especially <a href="https://www.isc.org/bind/">ISC bind</a> and <a href="https://www.isc.org/dhcp/">ISC dhcp</a> is also mandatory.</p>
+<h2 id="install-bind-and-dhcp">Install bind and dhcp</h2>
+<hr />
+<p>Ensure your system is up-to-date then install <strong>bind</strong> and <strong>dhcp</strong> packages</p>
+<pre><code>
+apt update &amp;&amp; sudo apt upgrade -y
+apt install bind9 isc-dhcp-server -y
+</code></pre>
+<h2 id="example-config">Example config</h2>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>domain</td>
+<td>mydomain.org</td>
+</tr>
+<tr>
+<td>local domain</td>
+<td>corp.mydomain.org</td>
+</tr>
+<tr>
+<td>local net/subnet</td>
+<td>172.16.10.0/24</td>
+</tr>
+<tr>
+<td>local gateway IP</td>
+<td>172.16.10.1</td>
+</tr>
+<tr>
+<td>local nameserver IP</td>
+<td>172.16.10.2</td>
+</tr>
+<tr>
+<td>dhcp range</td>
+<td>172.16.10.100 to 200</td>
+</tr>
+<tr>
+<td>temp nameserver IP</td>
+<td>91.239.100.100</td>
+</tr>
+</tbody>
+</table>
+<p>The temporary nameserver is provided by <a href="https://blog.uncensoreddns.org/">uncensoreddns.org</a></p>
+<h3 id="static-ip">Static IP</h3>
+<p>Assign a static IP to your Pi by editing your network configuration.</p>
+<p>Create a file <code>/etc/network/interfaces</code> and add content </p>
+<pre><code class="language-text">
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+        address 172.16.10.2
+        netmask 255.255.255.0
+        gateway 172.16.10.1
+        dns-nameservers 91.239.100.100 
+        # dns-nameservers 127.0.0.1
+</code></pre>
+<p>Double check your entries and reload</p>
+<pre><code>
+sudo systemctl daemon-reload
+sudo systemctl reload network
+</code></pre>
+<p>From another terminal on your workstation ping your Pi</p>
+<pre><code class="language-text">
+ping 172.16.10.2
+</code></pre>
+<p>On your Pi check the lookup</p>
+<pre><code class="language-text">
+dig domain.org
+</code></pre>
+<p>Ensure you have a working Pi before continuing</p>
+<h3 id="setup-your-public-dns">Setup your public DNS</h3>
+<p>Login into your domain dns controlpanel and create the following records and save the changes</p>
+<ol>
+<li>A-record <code>ns.corp.domain.org</code> with IP <code>172.16.10.2</code></li>
+<li>Nameserver <code>ns.corp.domain.org</code> for <code>corp.domain.org</code> </li>
+</ol>
+<p>Dump zone file from your control panel and verify the zone is correct</p>
+<pre><code class="language-text">
+ns.corp.domain.org.     43200   IN  A   172.16.10.2
+corp.domain.org.        43200   IN  NS  ns.corp.domain.org.
+                        43200       A   172.16.10.0
+</code></pre>
+<h3 id="corpdomainorg-zone">corp.domain.org zone</h3>
+<p>Enable and start the local nameserver</p>
+<pre><code class="language-text">
+systemctl enable bind9.service
+systemctl start bind9.service
+</code></pre>
+<p>Create a local zone file <code>/etc/bind/db.corp.domain.org</code> with content</p>
+<pre><code class="language-text">
+$TTL 1h
+@       IN  SOA ns.corp.domain.org. admin.domain.org. (
+                1       ; Serial
+                3600    ; Refresh
+                3600    ; Retry
+                1W      ; Exire
+                3H      ; Negative Cache TTL
+                )
+@       IN      NS      ns.corp.domain.org.
+ns      IN      A       172.16.10.2
+mail    IN      A       172.16.10.3
+webmail IN      CNAME   mail.corp.domain.org.
+</code></pre>
+<p>Check the zone </p>
+<pre><code class="language-text">
+named-checkconf /etc/bind/db.corp.domain.org
+</code></pre>
+<h3 id="1721610024-reverse-zone">172.16.10.0/24 reverse zone</h3>
+<p>Create a reverse zone file <code>/etc/bind/db.172.16.10</code> with content</p>
+<pre><code class="language-text">
+@       IN      SOA     ns.corp.domain.org. admin.domain.org. (
+                        1               ; Serial
+                        604800          ; Refresh
+                        86400           ; Retry
+                        2419200         ; Expire
+                        604800          ; Negative Cache TTL
+                        )
+@       IN      NS      ns.corp.domain.org.
+2       IN      PTR     ns.corp.domain.org
+3       IN      PTR     mail.corp.domain.org
+</code></pre>
+<p>Check the zone </p>
+<pre><code class="language-text">
+named-checkconf /etc/bind/db.172.160.10
+</code></pre>
+<p>Edit <code>/etc/bind/zones.rfc1918</code> and comment the line for your reverse zone file and save</p>
+<pre><code class="language-text">
+# zone &quot;16.172.in-addr.arpa&quot;  { type master; file &quot;/etc/bind/db.empty&quot;; };
+</code></pre>
+<p>Check the zone </p>
+<pre><code class="language-text">
+named-checkconf /etc/bind/zones.rfc1918
+</code></pre>
+<h3 id="adding-zones">Adding zones</h3>
+<p>Edit <code>/etc/bind/named.conf.local</code>  and add the new new zones and save the file</p>
+<pre><code class="language-text">
+zone &quot;corp.domain.org&quot; {
+    type master;
+    file &quot;/etc/bind/db.corp.domain.org;
+};
+
+zone &quot;10.16.172.in-addr.arpa&quot; {
+    type master;
+    file &quot;/etc/bind/db.172.16.10&quot;;
+};
+</code></pre>
+<p>Check the zone </p>
+<pre><code class="language-text">
+named-checkconf /etc/bind/named.conf.local
+</code></pre>
+<h3 id="check-root-servers">Check root servers</h3>
+<p>Check the root hints in  <code>db.root</code> and update the file if necessary (remember to check the zone if you edit)</p>
+<pre><code class="language-text">
+dig +bufsize=1200 +norec NS . @a.root-servers.net | egrep -v ';|^$' | sort
+</code></pre>
+<h3 id="check-the-options-file">Check the options file</h3>
+<p>Edit the file <code>/etc/bind/named.conf.options</code> if necessary - remember to check the zone after edit.</p>
+<h2 id="time-of-reckoning">Time of reckoning</h2>
+<hr />
+<p>Reload the bind9 service</p>
+<pre><code class="language-text">
+systemctl reload bind9.service
+</code></pre>
+<p>On the Pi test your lookup</p>
+<pre><code class="language-text">
+dig corp.domain.org
+</code></pre>
+<p>Change your Raspberry Pi network to use local bind service by editing the file <code>/etc/network/interfaces</code> file Change the temporay nameserver to <code>127.0.0.1</code> save the file and reload networking.</p>
+<pre><code class="language-text">
+#dns-nameservers 91.239.100.100 
+dns-nameservers 127.0.0.1
+</code></pre>
+<pre><code class="language-text">
+systemctl reload networking
+</code></pre>
+<p>On the Pi test your lookup one more time - you should get the same answer - this time from your Pi</p>
+<pre><code class="language-text">
+dig corp.domain.org
+</code></pre>
+<h2 id="setting-up-isc-dhcp">Setting up isc-dhcp</h2>
+<hr />
+<p>Edit the file <code>/etc/dhcp/dhcpd.conf</code> with content</p>
+<pre><code class="language-text">
+ddns-update-style interim;
+ddns-updates on;
+do-forward-updates on;
+option domain-name &quot;corp.domain.org&quot;;
+option domain-name-servers 172.16.10.2;
+option broadcast-address 172.16.10.255;
+option routers 172.16.10.1;
+default-lease-time 86400;
+max-lease-time 604800;
+
+subnet 172.16.10.0 netmask 255.255.255.0 {
+    range 172.16.10.101 172.16.10.200;
+};
+</code></pre>
+<p>! Only one DHCP service is allowed for a network so disable all other DHCP services.</p>
+<p>When you have disabled router DHCP - enable and start the <code>isc-dhcp-server.service</code></p>
+<pre><code class="language-text">
+systemctl enable isc-dhcp-server.service
+systemctl start isc-dhcp-server.service
+</code></pre>
+<h1 id="bind-ad-blocker">BIND ad blocker</h1>
+<p>When you have gone through lengths to set up your dns - you might as well utilize bind to block ads and known malware domains.</p>
+<p>Below is the README from <a href="https://github.com/Trellmor/bind-adblock">https://github.com/Trellmor/bind-adblock</a> which I have utilized to sanitize my network.</p>
+<p>The BIND ad blocker fetches various blocklists and generate a BIND zone from them.</p>
+<p>Configure BIND to return <code>NXDOMAIN</code> for ad and tracking domains to stop clients from contacting them.</p>
+<p>Requires BIND 9.8 or newer for <a href="https://en.wikipedia.org/wiki/Response_policy_zone">RPZ</a> support.</p>
+<p>Uses the following sources:</p>
+<ul>
+<li><a href="https://pgl.yoyo.org/adservers/">Peter Lowe’s Ad and tracking server list</a></li>
+<li><a href="http://www.malwaredomains.com/">Malware domains</a></li>
+<li><a href="http://winhelp2002.mvps.org/">MVPS HOSTS</a></li>
+<li><a href="https://adaway.org/hosts.txt">Adaway default blocklist</a></li>
+<li><a href="http://someonewhocares.org/hosts/zero/">Dan Pollock’s hosts file</a></li>
+<li><a href="http://www.malwaredomainlist.com/hostslist/hosts.txt">MalwareDomainList.com Hosts List</a></li>
+<li><a href="https://github.com/StevenBlack/hosts">StevenBlack Unified hosts file</a></li>
+<li><a href="http://sysctl.org/cameleon/">CAMELEON</a></li>
+<li><a href="https://disconnect.me/trackerprotection">Disconnect.me Basic tracking list</a></li>
+<li><a href="https://disconnect.me/trackerprotection">Disconnect.me Ad Filter list</a></li>
+<li><a href="https://www.cert.pl/ostrzezenia_phishing/">Polish CERT Phishing list</a></li>
+</ul>
+<h2 id="setup">Setup</h2>
+<h3 id="python-packages">Python packages</h3>
+<p>See requirements.txt</p>
+<p>To install</p>
+<pre><code>
+pip install -r requirements.txt
+</code></pre>
+<h3 id="configure-bind">Configure BIND</h3>
+<p>Add the <code>response-policy</code> statement to the BIND options</p>
+<pre><code>
+// For AdBlock
+response-policy {
+    zone &quot;rpz.example.com&quot;;
+};
+</code></pre>
+<p>Add your rpz zone. Replace example.com with a domain of your choice.</p>
+<pre><code>
+// AdBlock
+zone &quot;rpz.example.com&quot; {
+    type master;
+    file &quot;/etc/bind/db.rpz.example.com&quot;;
+    masterfile-format text;
+    allow-query { none; };
+};
+</code></pre>
+<p>Create a zone file for your zone. Replace example.com with the domain you used before.</p>
+<pre><code>
+@ 3600 IN SOA @ admin.example.com. 0 86400 7200 2592000 86400
+@ 3600 IN NS ns.example.com.
+</code></pre>
+<h2 id="usage">Usage</h2>
+<hr />
+<pre><code>
+    usage: update-zonefile.py [-h] [--no-bind] [--raw] [--empty] zonefile origin
+
+    Update zone file from public DNS ad blocking lists
+
+    positional arguments:
+      zonefile    path to zone file
+      origin      zone origin
+
+    optional arguments:
+      -h, --help  show this help message and exit
+      --no-bind   Don't try to check/reload bind zone
+      --raw       Save the zone file in raw format. Requires named-compilezone
+      --empty     Create header-only (empty) rpz zone file
+</code></pre>
+<p>Example: <code>update-zonefile.py /etc/bind/db.rpz.example.com rpz.example.com</code></p>
+<p><code>update-zonefile.py</code> will update the zone file with the fetched adserver lists and issue a <code>rndc reload origin</code> afterwards.</p>
+<h2 id="whitelist">Whitelist</h2>
+<hr />
+<p>You can either use an additional zone to whitelist domains (Or add them to <code>config.yml</code>) 
+See <a href="https://github.com/Trellmor/bind-adblock/wiki/whitelist">Whitelist</a> for adding a whitelist zone.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../network-basic-troubleshooting/" class="btn btn-neutral float-left" title="Network know-how"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../network-share-peer-to-peer-connection/" class="btn btn-neutral float-right" title="Share network connection peer-to-peer">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../network-basic-troubleshooting/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../network-share-peer-to-peer-connection/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Manjaro Folding@Home - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Manjaro Folding@Home";
+        var mkdocs_page_input_path = "manjaro/ai/manjaro-folding-at-home.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Manjaro</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Manjaro Folding@Home</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-on-a-stick/">Manjaro on a stick</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-04-update-the-smart-way/">Update Manjaro the smart way</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-dns-using-bind-for-local-domain/">Using bind for local domain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-file-sharing-manjaro/">Setting up NFS using Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/ssh-secure-your-ssh-service/">SSH server security</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-arm-wireless-file-service/">ARM wireless Samba file service based on Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-basic-setup-and-troubleshooting/">Basic Samba Setup and Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../samba/samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/virtualbox-headless-windows/">Headless Windows on VirtualBox</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Notes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-fstab/">Store personal files using separate partition (fstab)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Manjaro</li>
+      <li class="breadcrumb-item active">Manjaro Folding@Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="system">System</h2>
+<table>
+<thead>
+<tr>
+<th>AI</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>engine</td>
+<td>ollama</td>
+</tr>
+<tr>
+<td>llm</td>
+<td>gpt-oss:120b</td>
+</tr>
+<tr>
+<td>prompt</td>
+<td>How can I configure Manjaro Linux for use with Folding@Home using AMD W7500</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>os</td>
+<td>Manjaro Linux</td>
+</tr>
+<tr>
+<td>branch</td>
+<td>unstable</td>
+</tr>
+<tr>
+<td>kernel</td>
+<td>Linux 6.16</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Hardware</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU</td>
+<td>Radeon 7900XTX</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>Ryzen 5945WX</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>64G</td>
+</tr>
+</tbody>
+</table>
+<h2 id="disclaimer-ai-generated-content">DISCLAIMER - AI GENERATED CONTENT</h2>
+<p>Verify by crossreferencing the current Manjaro repo and <a href="https://wiki.archlinux.org/title/Folding@home">Folding@home - archlinux wiki</a></p>
+<p>Below is a <strong>step‑by‑step, copy‑and‑paste ready guide</strong> for turning a fresh (or already‑running) Manjaro Linux installation into a <strong>Folding@home (FAH) GPU workstation</strong> that uses an <strong>AMD Radeon W7500</strong>.<br />
+It covers everything you need to know:</p>
+<ul>
+<li>1️⃣  Preparing the system – updates, kernel, user, firewall  </li>
+<li>2️⃣  Installing the correct AMD OpenCL stack for the W7500 (open‑source + optional proprietary)  </li>
+<li>3️⃣  Verifying OpenCL works (<code>clinfo</code>)  </li>
+<li>4️⃣  Installing the FAH client (official package or from source)  </li>
+<li>5️⃣  Configuring the FAH client for GPU‑only work, setting a custom team, passkey, power‑limit, etc.  </li>
+<li>6️⃣  Managing the service (systemd) and monitoring progress (web UI, <code>FAHControl</code>, <code>FAHLog</code>)  </li>
+<li>7️⃣  Tweaking performance / power‑saving options specific to the W7500  </li>
+<li>8️⃣  Common pitfalls &amp; troubleshooting checklist  </li>
+</ul>
+<hr />
+<h2 id="1-system-preparation">1️⃣  System preparation</h2>
+<blockquote>
+<p><strong>Why?</strong><br />
+Manjaro ships with a rolling‑release kernel and a fairly recent Mesa stack, but we still want to make sure the kernel, firmware and user permissions are ready for AMD’s OpenCL drivers.</p>
+</blockquote>
+<pre><code class="language-bash"># 1. Refresh keyrings and update everything
+sudo pacman -Syyu --noconfirm
+
+# 2. Install the generic development tools (git, base-devel, etc.)
+sudo pacman -S --needed base-devel git
+
+# 3. Install a modern LTS kernel (optional, but recommended for better driver support)
+#    If you already run the default kernel (e.g., 6.7.x) you can skip this.
+sudo mhwd-kernel -i linux61  # or linux62, linux63 – whichever is current LTS in Manjaro repos
+
+# 4. Reboot into the new kernel (or keep your current one if it works)
+reboot
+</code></pre>
+<h3 id="create-a-dedicated-folding-user-optional-but-clean">Create a dedicated “folding” user (optional but clean)</h3>
+<pre><code class="language-bash">sudo useradd -m -G video,wheel -s /bin/bash folding
+# set a password (you’ll need it later)
+sudo passwd folding
+</code></pre>
+<blockquote>
+<p><strong>Tip:</strong> Adding the user to the <code>video</code> group gives it permission to access the GPU device nodes (<code>/dev/dri/*</code>). If you run FAH under your regular user, just make sure that user is in <code>video</code>.</p>
+</blockquote>
+<h3 id="firewall-if-you-enable-one">Firewall (if you enable one)</h3>
+<p>FAH uses <strong>port 80/443</strong> for control, <strong>port 7396</strong> for the web UI and <strong>port 36330</strong> for the optional “slot” server. The default <code>ufw</code> rules are enough:</p>
+<pre><code class="language-bash"># If you have ufw enabled
+sudo ufw allow 7396/tcp
+sudo ufw allow 36330/tcp
+sudo ufw reload
+</code></pre>
+<hr />
+<h2 id="2-install-the-amd-opencl-stack-for-the-radeon-w7500">2️⃣  Install the AMD OpenCL stack for the <strong>Radeon W7500</strong></h2>
+<p>The W7500 is a <strong>Polaris‑based</strong> GPU (GCN 4). It is fully supported by the <strong>open‑source <code>amdgpu</code> driver + Mesa OpenCL</strong> (<code>ROCm</code> is not required). However, you can also install the <strong>AMDGPU‑PRO OpenCL</strong> runtime for a modest performance boost.</p>
+<h3 id="2a-opensource-stack-recommended">2‑a. Open‑source stack (recommended)</h3>
+<pre><code class="language-bash"># Core driver + firmware (Manjaro already ships this, but reinstall to be safe)
+sudo pacman -S --needed xf86-video-amdgpu mesa opencl-mesa libclc
+
+# Install the OpenCL ICD loader (already part of mesa-opencl, but keep it explicit)
+sudo pacman -S --needed ocl-icd
+
+# Verify the ICD file exists
+cat /etc/OpenCL/vendors/mesa.icd
+# → should output: libRusticlOpenCL.so.1
+</code></pre>
+<h3 id="2b-optional-amdgpupro-opencl-runtime">2‑b. (Optional) AMDGPU‑PRO OpenCL runtime</h3>
+<p><strong>UNVERIFIED</strong> CHECK upstream on amd.com for the update drivers
+If you want the proprietary <code>amdgpu-pro</code> OpenCL libraries (they can be ~5‑10 % faster on some kernels), do the following <strong>once</strong>. It will coexist with the open‑source stack – the ICD loader will pick the “pro” library if present.</p>
+<pre><code class="language-bash"># Install the helper script that pulls the latest Pro package from AMD
+# (Works on Manjaro because we use the official .tar.xz release)
+mkdir -p ~/amdpro &amp;&amp; cd ~/amdpro
+wget -O amdgpu-pro.tar.xz \
+  https://drivers.amd.com/drivers/linux/amdgpu-pro-22.50-1290604-ubuntu-22.04.tar.xz
+tar -xf amdgpu-pro.tar.xz
+cd amdgpu-pro-22.50-1290604-ubuntu-22.04
+
+# Install ONLY the OpenCL portion – we keep the open‑source driver
+sudo ./amdgpu-install -y --opencl=legacy,pal --headless
+
+# The installer puts an extra ICD entry:
+cat /etc/OpenCL/vendors/amdgpu-pro.icd
+# → should point to libamdocl64.so (or libamdocl64.so.1)
+</code></pre>
+<blockquote>
+<p><strong>Important:</strong> After installing the proprietary OpenCL, you must <strong>re‑boot</strong> so that the kernel module picks up the new firmware.</p>
+</blockquote>
+<h3 id="2c-verify-opencl-works">2‑c. Verify OpenCL works</h3>
+<p><strong>VERIFIED</strong> USING W7100</p>
+<pre><code class="language-bash"># Install a tiny helper to query OpenCL devices
+sudo pacman -S --needed clinfo
+
+# Run it – you should see at least one “AMD Radeon W7500” device
+clinfo | grep -i &quot;AMD\|W7500&quot;
+</code></pre>
+<p>Typical output (open‑source stack):</p>
+<pre><code> $ clinfo | grep -i &quot;AMD\|7100&quot;
+  Device Name                                     AMD Radeon Pro WX 7100 Graphics (radeonsi, polaris10, ACO, DRM 3.61, 6.12.44-3-MANJARO)
+  Device Vendor                                   AMD
+    Device Name                                   AMD Radeon Pro WX 7100 Graphics (radeonsi, polaris10, ACO, DRM 3.61, 6.12.44-3-MANJARO)
+    Device Name                                   AMD Radeon Pro WX 7100 Graphics (radeonsi, polaris10, ACO, DRM 3.61, 6.12.44-3-MANJARO)
+    Device Name                                   AMD Radeon Pro WX 7100 Graphics (radeonsi, polaris10, ACO, DRM 3.61, 6.12.44-3-MANJARO)
+...
+</code></pre>
+<p>If you see <strong>“Number of platforms = 0”</strong>, double‑check that:</p>
+<ul>
+<li>the <code>amdgpu</code> kernel driver is loaded (<code>lsmod | grep amdgpu</code>)  </li>
+<li>the user is in the <code>video</code> group  </li>
+<li><code>/dev/dri/renderD*</code> nodes exist and are readable/writable (<code>ls -l /dev/dri/</code>)</li>
+</ul>
+<hr />
+<h2 id="3-install-the-foldinghome-client">3️⃣  Install the Folding@home client</h2>
+<p>Build the FAH client (<code>foldingathome</code>) from AUR. AUR packages may cease to function on system updates. If that happens you need to rebuild your FAH client.</p>
+<pre><code class="language-bash">pamac build foldingathome
+</code></pre>
+<p><strong>Alternative – compile the very latest client</strong> (useful if you want a bleeding‑edge patch)</p>
+<pre><code class="language-bash">cd ~
+git clone https://github.com/FoldingAtHome/fah-client.git
+cd fah-client
+./configure &amp;&amp; make -j$(nproc) &amp;&amp; sudo make install
+</code></pre>
+<h2 id="4-configure-the-fah-client-for-gpuonly-work">4️⃣  Configure the FAH client for GPU‑only work</h2>
+<h3 id="4a-generate-a-basic-configuration-file">4‑a. Generate a <strong>basic configuration file</strong></h3>
+<p>The first time the client runs, it will create <code>~/.config/FoldingAtHome/FAHClient.cfg</code>.<br />
+We will edit it manually to lock the client to the GPU slot.</p>
+<pre><code class="language-bash"># If you installed as a dedicated user, become that user
+sudo -iu folding
+
+# Run the client once to generate a default config (it will pause and ask for team/passkey)
+fah-client &amp;
+sleep 5
+kill %1   # stop the temporary instance
+</code></pre>
+<p>Now edit the config:</p>
+<pre><code class="language-bash">sudo micro ~/.config/FoldingAtHome/FAHClient.cfg
+</code></pre>
+<p>Paste the following (replace <strong>TEAM</strong>, <strong>PASSKEY</strong>, <strong>POWER</strong> as you wish):</p>
+<pre><code class="language-ini">#-------------------------------------------------
+# Folding@home client configuration – GPU only
+#-------------------------------------------------
+
+# 1. Identity
+user = folding          # any name you like
+team = 0                # 0 = default team; replace with your own team number (e.g., 12345)
+passkey =                # optional – put your personal passkey here if you have one
+
+# 2. Slots – we only want a GPU slot
+slot.0.type = GPU
+slot.0.device = 0       # first GPU (0‑based). If you have multiple GPUs, you can add slot.1, slot.2, etc.
+slot.0.power = 75       # % of max power the client may draw (default 100). 75% is a good compromise.
+slot.0.enabled = true
+
+# 3. Turn off CPU slots (optional but saves CPU cycles)
+slot.1.type = CPU
+slot.1.enabled = false
+
+# 4. Network &amp; security
+web-allow = 7396        # port for the built‑in web UI (http://localhost:7396)
+allow = 0/0/0           # allow all IPs (you can tighten this later)
+
+# 5. Misc
+gpu-allow = 0/0/0       # allow all GPUs – you can restrict by vendor if you ever add an NVIDIA card
+pause-on-battery = false   # If you run a laptop – set true to avoid running on battery
+</code></pre>
+<p><strong>Save (<code>Ctrl+s</code>) and exit (<code>Ctrl+q</code>).</strong></p>
+<h3 id="4b-optional-set-a-custom-passkey-recommended-for-tracking">4‑b. Optional – set a <strong>custom “passkey”</strong> (recommended for tracking)</h3>
+<p>If you have a personal Folding@home account, generate a <strong>passkey</strong> on the website (https://foldingathome.org/passkey) and paste it into the <code>passkey =</code> line above. This links the work units to your account and gives you credit on the leaderboard.</p>
+<h3 id="4c-set-resource-limits-for-the-w7500">4‑c. Set <strong>resource limits</strong> for the W7500</h3>
+<p>The Radeon W7500 can draw <strong>≈ 150 W</strong> at full load. To keep the system cool and the power bill modest, you can:</p>
+<ul>
+<li><strong>Throttle via the client</strong> (<code>slot.0.power = 70</code> → ~105 W).  </li>
+<li><strong>Set a kernel power profile</strong> with <code>amdgpu</code> sysfs:</li>
+</ul>
+<pre><code class="language-bash"># As root
+echo &quot;low&quot;   &gt; /sys/class/drm/card0/device/power_dpm_force_performance_level
+# or for a fine‑grained PWM limit:
+echo 80      &gt; /sys/class/drm/card0/device/pp_dpm_sclk
+</code></pre>
+<p>The <strong>client’s <code>slot.0.power</code></strong> is the easiest way because it is respected automatically for each work unit.</p>
+<hr />
+<h2 id="5-enable-start-the-service">5️⃣  Enable &amp; start the service</h2>
+<p>When you build the client, a systemd unit called <code>fahclient.service</code> was created.</p>
+<pre><code class="language-bash"># Enable it for the dedicated folding user (or your own user)
+sudo systemctl enable fahclient.service
+sudo systemctl start fahclient.service
+
+# Check status
+sudo systemctl status fahclient.service
+</code></pre>
+<p>You should see something like:</p>
+<pre><code>● fahclient.service - Folding@home client
+   Loaded: loaded (/usr/lib/systemd/system/fahclient.service; enabled; vendor preset: disabled)
+   Active: active (running) since Fri 2025-09-20 …
+ Main PID: 1234 (FAHClient)
+    Tasks: 4 (limit: 4915)
+   Memory: 150.0M
+   CGroup: /system.slice/fahclient.service
+           └─1234 /usr/bin/FAHClient -v
+</code></pre>
+<p>If you compiled the client yourself, you can create a simple service file:</p>
+<pre><code class="language-bash">sudo nano /etc/systemd/system/fahclient.service
+</code></pre>
+<pre><code class="language-ini">[Unit]
+Description=Folding@home client
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=folding            # or your own user
+ExecStart=/usr/local/bin/FAHClient -v
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<pre><code class="language-bash">sudo systemctl daemon-reload
+sudo systemctl enable --now fahclient.service
+</code></pre>
+<h3 id="verify-that-the-gpu-slot-is-active">Verify that the GPU slot is active</h3>
+<pre><code class="language-bash"># The client logs to ~/.config/FoldingAtHome/FAHClient.log
+tail -f ~/.config/FoldingAtHome/FAHClient.log
+</code></pre>
+<p>You should see lines like:</p>
+<pre><code>[INFO] slot 0 (GPU) is now working on core 2025-05-04 (Molecular Dynamics) on AMD Radeon W7500
+[INFO] slot 0: using 75% power limit
+</code></pre>
+<p>If you see <code>slot 0: no OpenCL platform found</code>, double‑check the OpenCL setup (section 2‑c).</p>
+<hr />
+<h2 id="6-monitoring-controlling-your-folding-node">6️⃣  Monitoring &amp; controlling your folding node</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>How to use</th>
+<th>What you see</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Web UI</strong> (built‑in)</td>
+<td>Open <code>http://localhost:7396</code> in a browser (or <code>http://&lt;IP&gt;:7396</code> from another machine)</td>
+<td>Real‑time work unit progress, GPU temperature, power usage, credit earned</td>
+</tr>
+<tr>
+<td><strong>FAHControl</strong> (GUI)</td>
+<td><code>sudo pacman -S fahcontrol</code> then launch <code>FAHControl</code></td>
+<td>Same as web UI, but with a desktop app; can change slots on‑the‑fly</td>
+</tr>
+<tr>
+<td><strong>FAHLog</strong> (CLI)</td>
+<td><code>FAHLog -t</code> (tail)</td>
+<td>Live log output (same as <code>tail -f</code> on the log file)</td>
+</tr>
+<tr>
+<td><strong>clinfo</strong></td>
+<td><code>clinfo</code></td>
+<td>Confirms OpenCL platform/device details – handy for debugging driver issues</td>
+</tr>
+<tr>
+<td><strong>systemd</strong></td>
+<td><code>systemctl status fahclient</code> / <code>journalctl -u fahclient -f</code></td>
+<td>Service health, restarts, crash logs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tip:</strong> If you run the node headless (no monitor), you can tunnel the web UI over SSH:</p>
+<pre><code class="language-bash">ssh -L 7396:localhost:7396 folding@your-node-ip
+# then point your local browser to http://localhost:7396
+</code></pre>
+<hr />
+<h2 id="7-performancetuning-specific-to-the-radeon-w7500">7️⃣  Performance‑tuning specific to the Radeon W7500</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Command</th>
+<th>Effect</th>
+<th>Recommended value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Client power limit</strong></td>
+<td><code>slot.0.power = 70</code> (in config)</td>
+<td>Caps GPU power, reduces heat &amp; fan noise</td>
+<td>70 % for 24/7 home use; 85 % if you need more credit</td>
+</tr>
+<tr>
+<td><strong>OpenCL work‑size</strong></td>
+<td><code>slot.0.gpu-allow = 0/0/0</code> (default) – you can add <code>slot.0.gpu-allow = 0/0/256</code> to limit work‑group size if you see instability</td>
+<td>Some kernels mis‑behave on older Polaris chips at large work‑groups</td>
+<td>Not needed for most users; leave default</td>
+</tr>
+<tr>
+<td><strong>Kernel performance level</strong></td>
+<td><code>echo high &gt; /sys/class/drm/card0/device/power_dpm_force_performance_level</code> (root)</td>
+<td>Forces the GPU to stay in “high” performance state, slightly better throughput but more heat</td>
+<td>Use <strong>high</strong> if you notice the GPU dropping to low power frequently (check <code>dmesg | grep amdgpu</code>)</td>
+</tr>
+<tr>
+<td><strong>Fan control</strong></td>
+<td>Install <code>amdgpu-fan</code> from AUR (<code>yay -S amdgpu-fan</code>) and set a custom curve (e.g., 60 % at 50 °C)</td>
+<td>Keeps temps under control without constant full‑speed fan</td>
+<td>40‑60 % fan speed is usually fine for 70 % power limit</td>
+</tr>
+<tr>
+<td><strong>CPU affinity</strong> (if you keep a tiny CPU slot)</td>
+<td><code>taskset -c 0-3 FAHClient</code> in a wrapper script</td>
+<td>Keeps the client from stealing cores you might need for other tasks</td>
+<td>Not required when CPU slot disabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-adding-a-fan-curve-optional">Example: Adding a fan curve (optional)</h3>
+<pre><code class="language-bash"># Install the helper
+yay -S amdgpu-fan
+
+# Create a simple profile (e.g., 30% at 40°C, 60% at 55°C, 100% at 70°C)
+sudo tee /etc/amdgpu-fan.conf &gt; /dev/null &lt;&lt;'EOF'
+[fan0]
+temp=40,30
+temp=55,60
+temp=70,100
+EOF
+
+# Enable the daemon
+sudo systemctl enable --now amdgpu-fan.service
+</code></pre>
+<hr />
+<h2 id="8-common-pitfalls-quickfix-checklist">8️⃣  Common pitfalls &amp; quick‑fix checklist</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>FAHClient</code> exits with “no OpenCL platform found”</strong></td>
+<td>- User not in <code>video</code> group <br> - <code>amdgpu</code> driver not loaded <br> - Wrong ICD file order (Pro overrides open‑source)</td>
+<td><code>sudo usermod -aG video $USER &amp;&amp; newgrp video</code> <br> Verify <code>lsmod | grep amdgpu</code> <br> Ensure <code>/etc/OpenCL/vendors/mesa.icd</code> exists and <code>amdgpu-pro.icd</code> (if installed) points to a real lib</td>
+</tr>
+<tr>
+<td><strong>GPU shows 0 % utilization in <code>clinfo</code> / FAH UI</strong></td>
+<td>- Power limit set to 0 (or <code>slot.0.power = 0</code>) <br> - GPU in “low” performance mode due to thermal throttling</td>
+<td>Set <code>slot.0.power</code> to a non‑zero value (≥ 50) <br> Run <code>cat /sys/class/drm/card0/device/pp_dpm_sclk</code> to see if clocks are stuck; if so, <code>echo high &gt; /sys/.../power_dpm_force_performance_level</code></td>
+</tr>
+<tr>
+<td><strong>FAH client crashes with “Segmentation fault (core dumped)”</strong></td>
+<td>- Mismatch between Mesa OpenCL version and AMDGPU‑PRO libs <br> - Out‑of‑date kernel (older kernels have bugs with Polaris)</td>
+<td>Remove the proprietary ICD (<code>sudo rm /etc/OpenCL/vendors/amdgpu-pro.icd</code>) and stick to the open‑source stack, OR update to the latest kernel (<code>mhwd-kernel -li</code> → install newest)</td>
+</tr>
+<tr>
+<td><strong>System hangs when folding starts</strong></td>
+<td>- Insufficient power supply (W7500 draws ~150 W) <br> - Overheating (GPU fan stuck)</td>
+<td>Verify PSU rating (&gt; 400 W) <br> Check temps with <code>sensors</code> (install <code>lm_sensors</code>) <br> Clean dust, ensure fan spins</td>
+</tr>
+<tr>
+<td><strong>FAH shows “No credit earned” despite work</strong></td>
+<td>- You forgot to add your <strong>passkey</strong> or <strong>team</strong> <br> - You are using the default team 0 (which still gives credit, but you may be confused)</td>
+<td>Add your personal passkey in <code>FAHClient.cfg</code> <br> Or join a team and set <code>team = &lt;your‑team‑id&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Web UI unreachable from another machine</strong></td>
+<td>- Firewall blocking 7396 <br> - <code>allow</code> setting restricts IPs</td>
+<td><code>sudo ufw allow 7396/tcp</code> <br> Set <code>allow = 0/0/0</code> in the config or specify <code>allow = 192.168.1.0/24/0</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="full-oneshot-script-optional">📦  Full “one‑shot” script (optional)</h2>
+<p>If you want to automate everything (except your personal team/passkey), copy‑paste the following script <strong>as root</strong> (or use <code>sudo -i</code> first). It will:</p>
+<ol>
+<li>Update the system  </li>
+<li>Install the open‑source AMDGPU + OpenCL stack  </li>
+<li>Install FAH client  </li>
+<li>Create a <code>folding</code> user (or use the current user)  </li>
+<li>Write a ready‑to‑run config with a 70 % power limit  </li>
+</ol>
+<pre><code class="language-bash">#!/usr/bin/env bash
+set -euo pipefail
+
+# -------------------------------------------------
+# 1️⃣  System update
+# -------------------------------------------------
+pacman -Syyu --noconfirm
+
+# -------------------------------------------------
+# 2️⃣  Install required packages
+# -------------------------------------------------
+pacman -S --needed base-devel git xf86-video-amdgpu mesa mesa-opencl libclc ocl-icd clinfo folding-at-home
+
+# -------------------------------------------------
+# 3️⃣  (Optional) create dedicated user
+# -------------------------------------------------
+if ! id -u folding &amp;&gt;/dev/null; then
+    useradd -m -G video,wheel -s /bin/bash folding
+    echo &quot;Created user 'folding' (set a password when prompted)&quot;
+    passwd folding
+fi
+
+# -------------------------------------------------
+# 4️⃣  Verify OpenCL
+# -------------------------------------------------
+if ! clinfo | grep -iq &quot;AMD Radeon W7500&quot;; then
+    echo &quot;⚠️  OpenCL detection failed. Please reboot and ensure the amdgpu driver loads.&quot;
+    exit 1
+fi
+
+# -------------------------------------------------
+# 5️⃣  Write config (for the chosen user)
+# -------------------------------------------------
+TARGET_USER=${SUDO_USER:-$(whoami)}
+HOME_DIR=$(eval echo &quot;~$TARGET_USER&quot;)
+CONFIG_DIR=&quot;$HOME_DIR/.config/FoldingAtHome&quot;
+mkdir -p &quot;$CONFIG_DIR&quot;
+
+cat &gt; &quot;$CONFIG_DIR/FAHClient.cfg&quot; &lt;&lt;'EOF'
+# Folding@home client config – GPU only (W7500)
+user = folding
+team = 0          # replace with your team number if you have one
+passkey =        # optional – paste your personal passkey here
+
+slot.0.type = GPU
+slot.0.device = 0
+slot.0.power = 70
+slot.0.enabled = true
+
+slot.1.type = CPU
+slot.1.enabled = false
+
+web-allow = 7396
+allow = 0/0/0
+gpu-allow = 0/0/0
+pause-on-battery = false
+EOF
+
+chown -R &quot;$TARGET_USER&quot;:&quot;$TARGET_USER&quot; &quot;$CONFIG_DIR&quot;
+
+# -------------------------------------------------
+# 6️⃣  Enable &amp; start the service
+# -------------------------------------------------
+systemctl enable --now fahclient.service
+
+echo &quot;✅  Setup complete! Check the log at $CONFIG_DIR/FAHClient.log&quot;
+echo &quot;🌐  Open http://$(hostname -I | awk '{print $1}'):7396 to watch your folding progress.&quot;
+</code></pre>
+<p>Run it with:</p>
+<pre><code class="language-bash">chmod +x setup_fah_w7500.sh
+sudo ./setup_fah_w7500.sh
+</code></pre>
+<p>After the reboot (or after the script finishes), <strong>open the web UI</strong> and you should see the GPU slot actively folding.</p>
+<hr />
+<h2 id="youre-done">🎉  You’re done!</h2>
+<p>Your Manjaro box with a Radeon W7500 is now <strong>contributing to the world‑wide Folding@home project</strong>.  </p>
+<ul>
+<li><strong>Check the web UI</strong> regularly to see work‑unit progress and credit.  </li>
+<li><strong>Keep the system updated</strong> (<code>sudo pacman -Syu</code>) – newer kernels and Mesa releases often bring modest OpenCL speed gains.  </li>
+<li><strong>If you ever add another GPU</strong> (e.g., an NVIDIA RTX), just add another <code>slot.N</code> block in the same config and the client will automatically use both.</li>
+</ul>
+<p>Happy folding, and thank you for donating your GPU cycles to science! 🚀🧬</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../../macos/macos-create-installer-image/" class="btn btn-neutral float-left" title="macOS installer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../android/android-manjaro-droid-cam/" class="btn btn-neutral float-right" title="Droid Cam on Manjaro">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../../macos/macos-create-installer-image/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../android/android-manjaro-droid-cam/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

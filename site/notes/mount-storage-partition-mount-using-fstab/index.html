@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Store personal files using separate partition (fstab) - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Store personal files using separate partition (fstab)";
+        var mkdocs_page_input_path = "notes/mount-storage-partition-mount-using-fstab.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Manjaro</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/ai/manjaro-folding-at-home/">Manjaro Folding@Home</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-installation-on-a-stick/">Manjaro on a stick</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/installation/manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/maintenance/manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/maintenance/manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/maintenance/manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/maintenance/manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/maintenance/manjaro-maintenance-04-update-the-smart-way/">Update Manjaro the smart way</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/maintenance/manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/network/network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/network/network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/network/network-dns-using-bind-for-local-domain/">Using bind for local domain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/network/network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/network/network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/network/networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/nfs/nfs-file-sharing-manjaro/">Setting up NFS using Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/nfs/nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/ssh-secure-your-ssh-service/">SSH server security</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/notes/thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/samba/samba-arm-wireless-file-service/">ARM wireless Samba file service based on Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/samba/samba-basic-setup-and-troubleshooting/">Basic Samba Setup and Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/samba/samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/samba/samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/samba/samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/samba/samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/virtual/libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../manjaro/virtual/virtualbox-headless-windows/">Headless Windows on VirtualBox</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Notes</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Store personal files using separate partition (fstab)</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#preparation">Preparation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setting-up-the-partition-for-single-user">Setting up the partition for single user</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-the-mount-script">Create the mount script</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#link-your-data">Link your data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-structure">Data structure</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reference-files">Reference files</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Notes</li>
+      <li class="breadcrumb-item active">Store personal files using separate partition (fstab)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="storing-personal-files-on-different-partition">Storing personal files on different partition</h1>
+<p>Some Linux users like to experiment with their system and more often than not it leads to the decision of reinstalling the system. That repeatedly creates the issue on how to handle the home folder with configurations and personal files.</p>
+<p>The purpose of this document is to create an easy and convenient way of safeguarding personal data files while retaining the home folder.</p>
+<h2 id="preparation">Preparation</h2>
+<p>http://www.pathname.com/fhs/pub/fhs-2.3.html#INTRODUCTION states</p>
+<blockquote>
+<p>The FHS document has a limited scope:
+    Local placement of local files is a local issue, so FHS does not attempt to usurp system administrators.
+    FHS addresses issues where file placements need to be coordinated between multiple parties such as local sites, distributions, applications, documentation, etc.</p>
+</blockquote>
+<p>So for the sake of this HowTo there is no standard as we are talking about </p>
+<p><strong><em>Local placement of local files is a local issue</em></strong>.</p>
+<p>Your system would ideally have two disks but if that is not possible - laptops come to mind - then a system with at least three partitions or more will suffice.</p>
+<ol>
+<li>EFI System Partition (ESP)</li>
+<li>Root with home</li>
+<li>User data</li>
+</ol>
+<h2 id="setting-up-the-partition-for-single-user">Setting up the partition for single user</h2>
+<p>Assuming you are the only user on the system, proceed to create a folder in your home e.g. <code>Data</code> and mount the extra partition there. </p>
+<pre><code>$ mkdir ~/Data
+</code></pre>
+<p>The simple and preferred method is to use the <strong>Gnome Disk Utility</strong> and modify the mount options so the partition mounts at boot time in the <strong>Data</strong> folder.</p>
+<p>If the system is a multi-user system the approach is different and is discussed <a href="https://archived.forum.manjaro.org/t/howto-share-data-in-linux-multi-boot-scenario/95534?u=linux-aarhus">here</a>.</p>
+<h2 id="create-the-mount-script">Create the mount script</h2>
+<p>When done and the partition mounts at boot, create a folder in the data folder.</p>
+<pre><code>$ mkdir ~/Data/scripts
+</code></pre>
+<p>Copy your <code>/etc/fstab</code> to the scripts folder</p>
+<pre><code>$ cp /etc/fstab ~/Data/scripts/fstab.txt
+</code></pre>
+<p>Edit the file <code>fstab.txt</code> and remove everything except the line which mounts your data partition.</p>
+<p>Proceed with creating a script in the scripts folder and make it executable</p>
+<pre><code>$ touch ~/Data/scripts/20-mod-fstab
+$ chmod +x ~/Data/scripts/20-mod-fstab
+</code></pre>
+<p>Edit the script file and paste the following content into it</p>
+<pre><code>#!/bin/bash
+scriptdir=${PWD}
+protected=$(grep 'PROTECT' /etc/fstab)
+if ! [[ -z $protected ]]; then
+    echo &quot;&quot;
+    echo &quot;Already modified! exit ...&quot;
+    exit
+fi
+echo &quot;Modifying a copy of /etc/fstab -&gt; ${scriptdir}/fstab.org ...&quot;
+cp /etc/fstab ${scriptdir}/fstab.org
+echo &quot;# PROTECTION against double merge&quot; &gt;&gt; ${scriptdir}/fstab.org
+echo &quot;Merging `fstab.txt` into `fstab.org`&quot;
+cat ${scriptdir}/fstab.txt &gt;&gt; ${scriptdir}/fstab.org
+echo &quot;Using sudo: Replacing /etc/fstab ...&quot;
+sudo mv -bi ${scriptdir}/fstab.org /etc/fstab
+sudo chown root:root /etc/fstab
+echo &quot;Using sudo: Mounting /etc/fstab&quot;
+sudo mount -a
+echo &quot;Done!&quot;
+</code></pre>
+<p>This script is a convenience script to be used when ever you have reinstalled your system and you you need to re-establish the mount point. <strong>The script expects the mount folder to be present</strong>.</p>
+<h2 id="link-your-data">Link your data</h2>
+<p>Depending in the folders you want to control you must ceate a symbolic link in your home to the new location. </p>
+<p>Create a new .home folder in your Data folder</p>
+<pre><code>$ mkdir ~/Data/.home
+</code></pre>
+<p>Decide which folders you want to control and create a new file in your <code>~/Data/scripts</code> folder and make it executable</p>
+<pre><code>$ touch ~/Data/scripts/30-link-data
+$ chmod +x ~/Data/scripts/30-link-data
+</code></pre>
+<p>Edit the file and and paste the following content into it. Modify the script to match your system and the folders you want to control and save the file. If want bulletproof folder structure consider the <a href="https://archived.forum.manjaro.org/t/wiki-move-your-personal-data-to-different-partition/47790/8?u=fhdk">information here</a></p>
+<pre><code>#!/bin/bash
+echo &quot;Moving and linking folders&quot;
+cd ~
+
+# moving and linking documents
+mv -i Documents ~/Data/.home
+ln -s ~/Data/.home/Documents
+
+# moving and linking downloads
+mv -i Downloads ~/Data/.home
+ln -s ~/Data/.home/Downloads
+
+# moving and linking music
+mv -i Music ~/Data/.home
+ln -s ~/Data/.home/Music
+
+# moving and linking pictures
+mv -i Pictures ~/Data/.home
+ln -s ~/Data/.home/Pictures
+
+# moving and linking virtualbox vm's
+mv -i VirtualBox\ VMs ~/Data/.home
+ln -s ~/Data/.home/VirtualBox\ VMs
+
+</code></pre>
+<p>The script is designed to be run on your home folder or a newly created home where no files has yet been saved. </p>
+<p>A simple safeguard exist so you must verify the moving of the folders - if they exist.</p>
+<h2 id="data-structure">Data structure</h2>
+<p>Create a new file in your <code>~/Data/scripts</code> folder and make it executable</p>
+<pre><code>$ touch ~/Data/scripts/10-create-data-structure
+$ chmod +x ~/Data/scripts/10-create-data-structure
+</code></pre>
+<p>Edit the file and paste the following content into it. Modify the script to match your system and save the file.</p>
+<pre><code>#!/bin/bash
+datadir=&quot;/home/$USER/Data&quot;
+echo &quot;Creating Data mount structure&quot;
+mkdir -p ${datadir}
+</code></pre>
+<p>The script is used to create your desired data structure. Add what you deem necessary.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>You have now created three scripts and a text file which can be used whenever you have reinstalled your system.</p>
+<p>Just run the scripts in sequence 10- 20- 30- and your data is mounted, linked and available - all within minutes.</p>
+<p>The scripts folder can be copied to a USB stick and run from it or be kept in the data partition and run from there.</p>
+<h2 id="reference-files">Reference files</h2>
+<p>[details="mounting details"]</p>
+<pre><code>/data/private/scripts &gt;&gt;&gt; cat fstab.txt                                         
+
+UUID=456bf27c-7e14-48b4-9df8-a49254dcf79e /data/projects   ext4 defaults,noatime 0 2
+UUID=899b1bc4-219c-4b92-8539-0aa118d9780a /data/build      ext4 defaults,noatime 0 2
+UUID=1f3d1a6e-b4b5-46da-909a-8a87a45dd18b /data/private    ext4 defaults,noatime 0 2
+#UUID=67f922cd-a61f-4d5e-84c0-ac8335a7ce67 /data/virtualbox ext4 defaults,noatime 0 2
+UUID=a27d7c58-0ebb-4c93-bcec-f9387f7d34f6 /data/virtualbox ext4 defaults,noatime 0 2
+#UUID=b925148a-0729-447a-ad95-4d9e27dcb442 /data/usb/seagate ext4 defaults,noatime 0 2
+
+tmpfs   /var/spool tmpfs   defaults,noatime,mode=1777   0  0
+tmpfs   /var/tmp   tmpfs   defaults,noatime,mode=1777   0  0
+
+diskstation:/volume1/data   /data/nfs/data  nfs auto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+diskstation:/volume1/music  /data/nfs/music nfs auto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+diskstation:/volume1/photo  /data/nfs/photo nfs auto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+diskstation:/volume1/video  /data/nfs/video nfs auto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+diskstation:/volume1/web    /data/nfs/web   nfs auto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+</code></pre>
+<p>[/details]</p>
+<p>[details="10-net-services"]</p>
+<pre><code>/data/private/scripts &gt;&gt;&gt; cat 10-net-services                                                                                                                   
+#!/bin/bash
+echo &quot;Using sudo ...&quot;
+echo &quot;Start and enable nfs-client.target&quot;
+sudo systemctl enable --now nfs-client.target
+sudo systemctl enable --now NetworkManager-wait-online.service
+</code></pre>
+<p>[/details]</p>
+<p>[details="20-create-data-structure"]</p>
+<pre><code>/data/private/scripts &gt;&gt;&gt; cat 20-create-data-structure                                                                                                          
+#!/bin/bash
+datadir=&quot;/data/&quot;
+echo &quot;Creating Data mount structure&quot;
+sudo mkdir ${datadir}
+sudo mkdir ${datadir}/nfs
+sudo mkdir ${datadir}/build
+sudo mkdir ${datadir}/private
+sudo mkdir ${datadir}/projects
+sudo mkdir ${datadir}/virtualbox
+sudo chown $USER ${datadir}/nfs \
+                 ${datadir}/build \
+                 ${datadir}/private \
+                 ${datadir}/projects \
+                 ${datadir}/virtualbox
+mkdir ${datadir}/nfs/data \
+      ${datadir}/nfs/music \
+      ${datadir}/nfs/photo \
+      ${datadir}/nfs/video \
+      ${datadir}/nfs/web
+</code></pre>
+<p>[/details]</p>
+<p>[details="30-mod-fstab"]</p>
+<pre><code>/data/private/scripts &gt;&gt;&gt; cat 30-mod-fstab                                                                                                                      
+#!/bin/bash
+echo &quot;Modifying a copy of /etc/fstab...&quot;
+workdir=${PWD}
+protected=$(grep 'PROTECT' /etc/fstab)
+if ! [[ -z $protected ]]; then
+    echo &quot;&quot;
+    echo &quot;Already modified! exit ...&quot;
+    exit
+fi
+cp /etc/fstab ${workdir}/fstab.org
+echo &quot;# PROTECTION against double merge&quot; &gt;&gt; ${workdir}/fstab.org
+echo &quot;Merging 'fstab.txt' with 'fstab.org'&quot;
+cat ${workdir}/fstab.txt &gt;&gt; ${workdir}/fstab.org
+echo &quot;Using sudo: Replacing /etc/fstab...&quot;
+sudo mv ${workdir}/fstab.org /etc/fstab
+sudo chown root:root /etc/fstab
+echo &quot;Using sudo: Mounting /etc/fstab&quot;
+sudo mount -a
+echo &quot;Done!&quot;
+</code></pre>
+<p>[/details]</p>
+<p>[details="40-link-data"]</p>
+<pre><code>/data/private/scripts &gt;&gt;&gt; cat 40-link-data                                                                                                                      
+#!/bin/bash
+cd ~
+
+#linking root data folder
+ln -s /data ~/Data
+
+echo &quot;Linking Documents folder...&quot;
+rm -rf Documents
+ln -sf /data/private/.home/Documents
+
+echo &quot;Linking Downloads folder...&quot;
+rm -rf Downloads
+ln -sf /data/private/.home/Downloads
+
+echo &quot;Linking Music folder...&quot;
+rm -rf Music
+ln -sf /data/private/.home/Music
+
+echo &quot;Linking Pictures folder...&quot;
+rm -rf Pictures
+ln -sf /data/private/.home/Pictures
+
+echo &quot;Linking Manjaro tools config folder...&quot;
+ln -sf /data/private/manjaro-tools-config ~/.config/manjaro-tools
+
+echo &quot;Linking Thunderbird data folder...&quot;
+ln -sf /data/private/.home/.thunderbird
+
+echo &quot;Linking Virtual Environments folder...&quot;
+ln -sf /data/projects/.virtualenvs
+
+echo &quot;Linking VirtualBox VMs...&quot;
+ln -sf /data/virtualbox/VirtualBox\ VMs
+
+echo &quot;Copying Git config...&quot;
+ln -sf /data/private/.home/.gitconfig
+
+echo &quot;Linking makepkg config...&quot;
+ln -sf /data/private/.home/.makepkg.conf
+
+echo &quot;Linking Transifex config...&quot;
+ln -sf /data/private/.home/.transifexrc
+
+echo &quot;Linking netrc config...&quot;
+ln -sf /data/private/.home/.netrc ~/
+chown fh:fh ~/.netrc
+chmod u+rwx,go-rwx ~/.netrc
+
+echo &quot;Copying SSH config folder...&quot;
+cp -r /data/private/.home/.ssh ~/.ssh
+chown fh:fh ~/.ssh -R
+chmod u+rwx,go-rwx ~/.ssh -R
+
+echo &quot;Linking thunderbird folder...&quot;
+ln -sf /data/private/.home/.thunderbird
+
+echo &quot;Linking GPG keyring&quot;
+rm -f ~/.gnupg
+ln -sf /data/private/.home/.gnupg
+chown fh:fh ~/.gnupg -R
+chmod u+rwx,go-rwx ~/.gnupg -R
+
+echo &quot;Done!&quot;
+
+</code></pre>
+<p>[/details]</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mount-loop-img-files/" class="btn btn-neutral float-left" title="CLI mount .img files on Arch based system"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mount-storage-partition-mount-using-systemd/" class="btn btn-neutral float-right" title="Store personal files using separate partition (systemd)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mount-loop-img-files/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mount-storage-partition-mount-using-systemd/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>ARM wireless Samba file service based on Arch - Notes and Bookmarks</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ARM wireless Samba file service based on Arch";
+        var mkdocs_page_input_path = "manjaro/samba/samba-arm-wireless-file-service.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes and Bookmarks
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../about.md">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bookmarks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../bookmarks/bookmark-linux-finding-port-origin/">Linux finding port origin</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notes</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Dotnet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-collapsible-sidebar/">Blazor WASM collapsible menu</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/blazor-wasm-pwa-service-worker/">Blazor WASM PWA service-worker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/csharp-api-response-custom-header/">Web API2 Expose Custom Header</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-different-versions/">Different dotnet versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../dotnet/dotnet-notes-certificate/">Creating a dotnet development certificate</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MacOS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../macos/macos-create-installer-image/">macOS installer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Manjaro</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../ai/manjaro-folding-at-home/">Manjaro Folding@Home</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-droid-cam/">Droid Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../android/android-manjaro-iriun-webcam/">Iriun Web Cam on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../cheats/cheatsheet-tmux/">tmux cheatsheet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-alacritty-terminal-emulator/">Alacritty Terminal Emulator</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-change-username/">Change username</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-import-pfx-certificate/">Import pfx certificats on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-manjaro-tools-build-mirror/">Manjaro Tools build_mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../configuration/configuration-x11-over-ssh/">X11 over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-boot-iso-directly/">Boot ISO from GRUB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../grub/grub-support-for-luks2-container/">Grub load system from luks2 container</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-cloud-instance-using-cloud-init/">Manjaro cloud instance using cloud-init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-kde-plasma/">CLI to LXDE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-mate-systemd-boot-and-luks/">Mimick Manjaro Mate using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-on-a-stick/">Manjaro on a stick</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-and-luks/">Manjaro base using sdboot and luks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-basic/">systemd-boot - BASIC - installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-btrfs/">systemd-boot - LUKS - btrfs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-systemd-boot-luks-ext4/">systemd-boot - LUKS - ext4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-using-luks/">Encrypted CLI installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-cli-installation-vanilla-gnome/">CLI to vanilla Gnome</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-persistent-usb-installation/">Manjaro Persistent USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/manjaro-usb-to-go-with-persistience/">USB LXDE with persistence</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-change-phrase/">Changing LUKS passphrase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../luks/luks-dm-crypt-notes/">dm-crypt notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-00-about-manjaro-and-aur/">About Manjaro and AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-01-i-am-not-to-blame/">What is wrong - I am not to blame</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-02-responsible-use-of-aur/">Responsible use of AUR</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-03-aur-restrain-yourself/">AUR - please restrain yourself</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-maintenance-04-update-the-smart-way/">Update Manjaro the smart way</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../maintenance/manjaro-update-practise/">Smart Manjaro system update</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-offline-package-installation/">Manjaro - offline package installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mirror/manjaro-portable-mirror/">Portable Manjaro Mirror</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-iptables-rules/">Basic firewall (iptables) rules</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-basic-troubleshooting/">Network know-how</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-dns-using-bind-for-local-domain/">Using bind for local domain</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-share-peer-to-peer-connection/">Share network connection peer-to-peer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/network-tigervnc-over-ssh/">TigerVNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network/networkmanager-disable-connectivity-check/">Disable NetworkManager connectivity check</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-file-sharing-manjaro/">Setting up NFS using Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../nfs/nfs-synology-nas/">Connect to Synology NFS share</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-desktop-installer/">Hacking ARM desktop installer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-arm-hacking-installer-to-enable-wifi/">Hacking ARM install image to connect to WiFi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-be-compatible-with-vpn-providers/">Make Manjaro compatible with VPN providers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-convert-to-arch/">Convert Manjaro to Arch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-manjaro-and-windows/">Dual boot Manjaro and Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-dual-boot-windows/">Linux dual-boot Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-to-usb-no-wasted-space/">ISO to USB no wasted space</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-iso-tty-autologin/">Automated ISO login</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-reinstall-withoug-losing-data/">Reinstall Manjaro without loosing data</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-run-java-application/">Run a Java program on Manjaro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/manjaro-simple-nas-configuration/">Manjaro NAS (network attached storage)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multi-boot-environment/">Sharing data in multi-boot environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/share-data-in-multiuser-environment/">Sharing data in multiuser environment</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/ssh-secure-your-ssh-service/">SSH server security</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../notes/thunar-custom-actions/">Thunar custom actions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinebook-pro-network-wifi-privacy-cycle/">Pinebook Pro Network Wifi Privacy Cycle</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../pine64/pinephone-community-edition/">Pine Phone Community Edition</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-install-nextcloud/">Install NextCloud on Raspberry Pi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-notes/">Raspberry Pi notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-selfhosted-nextcloud/">Sharing Pi NextClound</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-ubuntu-server/">Ubuntu Server on RPi</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-vnc-over-ssh/">Raspberry Pi VNC over SSH</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/">Pi Zero W - prepare wireless connection</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">ARM wireless Samba file service based on Arch</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#goal">Goal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#prerequisite">Prerequisite</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-basic-setup-and-troubleshooting/">Basic Samba Setup and Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-from-scratch/">Samba From Scratch</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-minimal-configuration/">Minimal SMB configuration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-protocols-overview/">SMB protocols overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../samba-quick-setup-public-read-write-shares/">Samba Quick Setup public read-write shares</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-arm-image-wifi-hack/">Arch ARM image WiFi hack</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-battery-charge-notifier/">Battery Charge Notifier</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-aur-buildscript-changes/">Check AUR buildscript changes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-check-if-update-may-require-reboot/">Kontroller om genstart er nødvendig før du opdaterer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-get-lan-ip-address/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-mount-samba-share-as-user/">Mount samba share as user</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-package-and-configuration-backup/">Packagelist and Configuration backup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-set-default-browser/">Set Browser Script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-template-freerdp/">Get LAN IP address</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../scripts/script-usb-partion-format/">USB partition script</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../secure-boot/secure-boot-manjaro-using-repo-only/">Manjaro and Windows - Secure Boot - repo only</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-configuration/">systemd - mount units</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-ftp-sample/">FTP mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-nfs-sample/">NFS mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-partition-sample/">Partition mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-removable-sample/">USB device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-samba-sample/">SMB mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-mount-unit-webdav-sample/">WEBDAV mount unit</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../systemd/systemd-unit-documentation/">Systemd unit manual</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-boot-to-shell/">kernel init</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-locale-error-messages/">Locale error messages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-makepkg-missing-gpg-keys/">Retrieve missing GPG using makepkg</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-manjaro-windows-dual-boot/">Troubleshooting Manjaro Windows dual-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-system-missing-firmware/">Troubleshooting missing firmware access</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting/troubleshoot-using-reisub/">REISUB / REISUO</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/libvirt-install-windows-11/">virt-manager - Windows 11</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../virtual/virtualbox-headless-windows/">Headless Windows on VirtualBox</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >MS-Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-avoid-ms-account-on-installation/">Install with local account</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-create-a-windows-usb/">Create a Windows USB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-killing-process/">Killing process in MS Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../ms-windows/ms-windows-visual-studio-iis-express-configuration/">Visual Studio IISExpress</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Notes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-linux-is-not-windows/">Linux is Not Windows</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/essay-the-perfext-linux-os/">The perfect Linux OS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/md-raid-notes/">MD/RAID notes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-disk-using-fstab/">Permanent mounts using fstab</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-loop-img-files/">CLI mount .img files on Arch based system</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-fstab/">Store personal files using separate partition (fstab)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-storage-partition-mount-using-systemd/">Store personal files using separate partition (systemd)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mount-windows-partition/">Access my second harddrive</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/mouse-and-keyboard-sharing/">Mouse and keyboard sharing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ms-sql-notes/">Contraints</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/powershell-sql-queries/">Using Powershell for SQL queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/systemd-boot-notes/">Notes on systemd-boot</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/tools-linux-recovery-tools-and-iso/">Tools Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/ubiquiti-flash-usg-3p/">Flash USG-3P</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/usb-clearing-a-stubborn-device/">Clearing a stubborn storage device</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../notes/xorg-intel-x11-config/">Intel Xorg config</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes and Bookmarks</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Notes</li>
+          <li class="breadcrumb-item">Manjaro</li>
+      <li class="breadcrumb-item active">ARM wireless Samba file service based on Arch</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>Difficulty: ★★★★☆</p>
+<h2 id="wireless-raspberry-pi-file-server">Wireless Raspberry Pi file server</h2>
+<h3 id="goal">Goal</h3>
+<p>The exercise is to use use Samba to share different content for different audiences using an Arch Linux based OS.</p>
+<p>Which one you choose is up to you - for this writeup I am using Manjaro ARM minimal.</p>
+<p>The bar is set high as the installation and configuration is done from scratch using a SSH terminal session to the target system.</p>
+<p>It will also require understanding of the Access Control List in a GNU/Linux system as well as networking concepts.</p>
+<p>The final setup will provide the following features</p>
+<p>Users and groups
+* user:admin group:admin home:admin
+* user:hans group:users,office (no-shell, no-home)
+* user:grete group:users,admin (no-shell, no-home)</p>
+<p>Shares
+* public share
+   * authenticated users can edit files
+   * guests can read files
+* document share
+   * stored on local root partition accessible to authenticated users
+   * files may be edited by users belonging to the <em>admin</em> group
+   * <em>office</em> users can only read the documents
+* music library (administrated by the dedicated admin)
+   * stored on external partition - in this case an USB stick</p>
+<h3 id="prerequisite">Prerequisite</h3>
+<ul>
+<li>Reference <a href="https://wiki.archlinux.org/title/Samba">Arch Wiki</a> on Samba</li>
+<li>Arch (based) Workstation</li>
+<li>The following packages <strong>micro</strong>, <strong>smb-client</strong>, <strong>gvfs</strong> and <strong>gvfs-smb</strong></li>
+<li>The package <strong>rpi-imager</strong> which you either install from the Manjaro repo or build from AUR</li>
+<li>A cardreader to be able to write the image to a micro sd-card</li>
+<li>Raspberry Pi 4</li>
+<li>Micro sd-card</li>
+</ul>
+<p>Do a full system sync adding the packages  to your workstation (remember to reboot if your kernel is updated)</p>
+<pre><code>sudo pacman -Syu micro smb-client gvfs gvfs-smb base-devel git --needed
+</code></pre>
+<p>If you are using Manjaro - install rpi-imager from the repo</p>
+<pre><code>sudo pacman -S rpi-imager
+</code></pre>
+<p>If using EndeavourOS or Arch you must build the rpi-imager from AUR</p>
+<pre><code>git clone https://aur.archlinux.org/rpi-imager
+cd rpi-imager
+makepkg -is
+</code></pre>
+<p>Plug your sd-card in the card reader attached to your workstation</p>
+<p>The RPI imager is simple to use. Upon selection of <strong>source</strong> and <strong>storage</strong> the app downloads the image, writes to sd-card and verifies the image - ready to use.</p>
+<p>Just launch the app - navigate to locate the Manjaro ARM minimal and write it to your sd-card.</p>
+<p>Create the <a href="https://root.nix.dk/en/utility-scripts/manjaro-arm-setup-wifi-script">wifi-hack.sh script</a> and use it to configure your PI's WiFi.</p>
+<p>The script takes 6 arguments <code>&lt;blockdev&gt; &lt;ssid&gt; &lt;passphrase&gt; &lt;cidr&gt; &lt;gateway&gt; &lt;dns&gt;</code>.</p>
+<p>The following is an example - amend the arguments for your use case</p>
+<pre><code>sudo hack-wifi.sh /dev/mmcblk0 my-ssid 192.168.1.90/24 192.168.1.1 192.168.1.1
+</code></pre>
+<p>Move the sdcard to your pi and power up. Wait for the device to settle - the green activity led becomes quiet - more important - allow the device to connect to your wifi.</p>
+<p>We will switch back and forth and forth between ssh and workstation - and we will be referencing the pi's smb service quite a lot.</p>
+<p>So to avoid having to type the IP address repeatedly we will create an alias for the configured IP and append to your workstation's <code>hosts</code> file.</p>
+<p>For this writeup I have chosen <strong>rpi</strong></p>
+<pre><code>echo &quot;192.168.1.90 rpi&quot; | sudo tee -a /etc/hosts
+</code></pre>
+<p>Connect to the pi using the either the address or the alias</p>
+<pre><code>ssh root@rpi
+</code></pre>
+<p>The oem installer script will prompt you for a hostname - be smart and use the alias you just created.</p>
+<p>After completion of the script the device reboot.</p>
+<p>Reconnect to the device using the newly configured user.</p>
+<pre><code>ssh username@pi
+</code></pre>
+<p>Configure the mirrorlist and do a full sync while adding <strong>samba</strong>, <strong>firewalld</strong>, <strong>micro</strong>.</p>
+<pre><code>sudo pacman-mirrors --continent &amp;&amp; sudo pacman -Syyu samba micro firewalld
+</code></pre>
+<p>Then enable firewalld and configure use firewall-cmd to configure the service for the home zone</p>
+<pre><code>sudo systemctl enable --now firewalld
+sudo firewall-cmd --set-default-zone=home
+sudo firewall-cmd --permanent --add-service={samba,ssh} --zone=home
+</code></pre>
+<p>After sync has completed reboot your rpi and reopen the ssh connection</p>
+<pre><code>sudo reboot
+</code></pre>
+<h2 id="data-tree">data tree</h2>
+<p>On the pi we will store data in a designated tree starting from our system root (<strong>/</strong>)</p>
+<pre><code>mkdir -p /data/office
+mkdir -p /data/media/music
+mkdir -p /data/public 
+</code></pre>
+<p>Visualised using <code>tree</code></p>
+<pre><code># tree /data
+/data
+├── media
+│   └── music
+├── office
+└── public
+</code></pre>
+<h3 id="permissions">Permissions</h3>
+<h4 id="office">office</h4>
+<p>The office folder's permission should be editable by group with no access for other - including guests.</p>
+<pre><code>chmod go+w,o-rx /data/office
+</code></pre>
+<h4 id="media">media</h4>
+<p>The content of <strong>/data/media/music</strong> is stored on an external USB device, so initially there is no data. The device may or may not be attached, we will handle that later as this pose a challenge.</p>
+<p>The media folder has suitable permissions - no need to change.</p>
+<h4 id="public">public</h4>
+<p>The public folder is writable by group and readable for other</p>
+<pre><code>chmod g+w /data/public
+</code></pre>
+<p>The <strong>office</strong> group doesn't exist - so let's create it and assign the group to the documents folder.</p>
+<pre><code>groupadd office
+chgrp office /data/office
+</code></pre>
+<p>For the <strong>public</strong> folder we decided that authenticated users are allowed to write - guests are not. The default <strong>users</strong> group is perfect for this.</p>
+<pre><code>chgrp users /data/public
+</code></pre>
+<p>If you list the content of the data folder vs. the bind mounted folders you will note the permissions reflect the permissions set on the data folder.</p>
+<pre><code># ls -l /data
+drwxr-xr-x 3 admin admin  4096 Aug 10 01:29 media
+drwxr-xr-x 2 admin office 4096 Oct 16 10:40 office
+drwxrwxr-x 2 admin users  4096 Oct 16 09:48 public
+````
+Listing `/srv/samba` and `/srv/samba/data` folder
+</code></pre>
+<h1 id="ls-l-srvsamba">ls -l /srv/samba</h1>
+<p>drwxr-xr-x 5 root  admin 4096 Oct 16 10:40 data
+drwxrwxr-x 2 admin users 4096 Oct 16 09:48 public</p>
+<h1 id="ls-l-srvsambadata">ls -l /srv/samba/data</h1>
+<p>drwxr-xr-x 3 admin admin  4096 Aug 10 01:29 media
+drwxr-xr-x 2 admin office 4096 Oct 16 10:40 office
+drwxrwxr-x 2 admin users  4096 Oct 16 09:48 public</p>
+<pre><code>
+### data protection
+To ensure we do not accidental enable folder traversel outside the shares we will use **bind** mounts.
+
+Mounting using **bind** is a simple and efficient method of making data from one folder available from another folder on the same system. The function is similar to symlink but you cannot create folder traversal using dots.
+
+We will create some corresponding folders in **/srv** and bind our data there.
+</code></pre>
+<p>mkdir -p /srv/samba/data
+mkdir -p /srv/samba/public</p>
+<pre><code>Open the file /etc/fstab with micro
+</code></pre>
+<p>micro /etc/fstab</p>
+<pre><code>Append the following lines
+</code></pre>
+<p>/data             /srv/samba/data none bind 0 0
+/data/public      /srv/samba/public none bind 0 0</p>
+<pre><code>Now execute a reload and mount everything
+</code></pre>
+<p>systemctl daemon-reload
+mount -a</p>
+<pre><code>When we list the **/srv/samba** we see how our changes to the data folders is reflected in share tree
+</code></pre>
+<h1 id="ls-l-srvsamba_1">ls -l /srv/samba</h1>
+<p>drwxr-xr-x 5 root  admin 4096 Oct 16 10:40 data
+drwxrwxr-x 2 admin users 4096 Oct 16 09:48 public</p>
+<h1 id="ls-l-srvsambadata_1">ls -l /srv/samba/data</h1>
+<p>drwxr-xr-x 3 admin admin  4096 Aug 10 01:29 media
+drwxr-xr-x 2 admin office 4096 Oct 16 10:40 office
+drwxrwxr-x 2 admin users  4096 Oct 16 09:48 public</p>
+<pre><code>
+And the tree
+</code></pre>
+<p>/srv/samba
+├── data
+│   ├── media
+│   │   └── music
+│   ├── office
+│   └── public
+└── public</p>
+<pre><code>
+## Basic samba configuration
+In your shell session switch to root session - so we don't have to prepend everything with sudo.
+</code></pre>
+<p>su -l root</p>
+<pre><code>Locate the samba configuration folder on your pi
+</code></pre>
+<p>cd /etc/samba</p>
+<pre><code>Samba is always configured from scratch - there is no default config, it must be created before you can start the service.
+
+The micro editor is terminal editor with support for copy/paste and other well know editor shortcuts.
+
+In the samba configuration folder start micro and create the required configuration **smb.conf**
+
+</code></pre>
+<p>micro smb.conf</p>
+<pre><code>
+We start by defining two sections **global** configuration and **public** share configuration
+
+</code></pre>
+<p>[global]
+   workgroup = WORKGROUP
+   server string = Samba File Server
+   server role = standalone server
+   log file = /var/log/samba/log.%m
+   max log size = 50
+   guest account = nobody
+   map to guest = Bad Password</p>
+<p>min protocol = SMB2   # Think ransomware - you don't wannacry</p>
+<p>[public]
+   path = /srv/samba/public
+   public = yes
+   writable = yes
+   printable = no</p>
+<p>[data]
+  path = /srv/samba/data
+  public = no
+  writable = yes
+  printable = no</p>
+<pre><code>Run the command `testparm` to ensure your smb.conf is free from spelling errors then start the service.
+</code></pre>
+<p>testparm -s</p>
+<pre><code>If you are curios about smb.conf - try this
+
+</code></pre>
+<p>testparm -s -v &gt; ~/smb-defaults.txt | micro </p>
+<pre><code>
+### public share
+
+Verify the public share by opening the file manager on your workstation.
+
+Use **Ctrl+L** and input `smb://ip.x.y.z/public` then press **Enter**
+
+Login using the anonymous method. Try creating new file - you should expect access denied.
+
+Then go back to your shell and create an empty text file in public folder. 
+</code></pre>
+<p>touch /data/public/test.txt</p>
+<pre><code>Go back to your file manager press **F5** to reveal the new file.
+
+All good - now unmount the public share from the file manager and reopen the share - this time login using the username and credentials from your ssh session - this time edit the file and save it.
+
+Did you get access denied once more? Good - this is expected behavior as there is no users in the samba trust database. Unmount the public share using the eject button in the file manager.
+
+## user - samba vs. system
+**It is very important to remember**
+
+- a system user is not a samba user
+- a samba user requires a system user
+
+If you change your user password you either remember two passwords or change using `smbpasswd` for your username.
+
+To enable passwd sync maintenance from samba to system - add this to the global section of `smb.conf`
+</code></pre>
+<p>[global]
+  ....
+   obey pam restrictions = yes
+   unix password sync = yes
+   passwd program = /usr/bin/passwd %u
+   passwd chat = <em>New</em>UNIX<em>password</em> %n\n <em>ReType</em>new<em>UNIX</em>password<em> %n\n </em>passwd:<em>all</em>authentication<em>tokens</em>updated<em>successfully</em>
+   pam password change = yes
+  ....</p>
+<pre><code>Any changes to smb.conf requires the service to be restarted and as a precaution always test the config before restarting.
+
+Using this command will prevent samba from restarting if the testparm command fails
+</code></pre>
+<p>testparm &amp;&amp; systemctl restart smb</p>
+<pre><code>
+### anonymous user
+**Anonymous users is a security risk.** 
+You have no control over the contenton your share. This is bad - very, very bad - think ransomware - you don't *wannacry* :sob:  If you - despite all warnings - must create a public share with no restrictions refer to [Samba Usage][3] on Arch Wiki.
+
+### authenticated user
+Remember the leading sentence for this section - **a system user is not a samba user**. Since our service should allow authenticated users to create content in the public folder - let us start easy with your ssh username.
+</code></pre>
+<p>smbpasswd -a your-user</p>
+<pre><code>In your file manager mount the share again - this time using your ssh user and the samba password. Open the empty file - enter some text and save it. Try creating some new content on the public share.
+
+This time you are authenticated and thus allowed to make changes.
+
+Remove your test content from the share and unmount.
+
+
+### creating users - add to samba
+Our server is a file server only and as such - besides the admin - users has no use for home folder and they don't need shell access.
+
+Our challenge includes and administrator and two distinct authenticated users with access to the documents folder.
+
+* *users* group can read/write public content
+* *office* group can read documents
+* *admin* group can read/write all content
+
+As we configured samba using **unix password sync = yes** samba will sync the password back to the system.
+
+#### creating users
+A designated administrator of shared content. The user has system login permissions and a home folder
+</code></pre>
+<p>useradd --create-home --user-group --groups office,users --shell /bin/bash admin
+smbpasswd -a admin</p>
+<pre><code>A user named *hans* in group *office* with no shell, no home and no personal group 
+</code></pre>
+<p>useradd --no-create-home --no-user-group --groups office  -s /bin/nologin hans
+smbpasswd -a hans</p>
+<pre><code>Let's create the office user - name *grete* with no shell, no home, no personal group but a supplementary group *office*
+</code></pre>
+<p>useradd --no-create-home --no-user-group --groups admin --shell /bin/nologin grete
+smbpasswd -a grete</p>
+<pre><code>### admin user permissions
+When you list the content of the `/data` folder, `root` is listed as owner - but we have our dedicated admin.
+
+Let's change the group for */data* root  to admin - allowing admin to create new folders
+</code></pre>
+<p>chgrp admin /data</p>
+<pre><code>
+Next we change the owner of content inside */data/* - you did remove the test files - right? Otherwise the owner will change for those as well.
+</code></pre>
+<p>chown admin /data/* -R</p>
+<pre><code>
+## the data share
+Edit your samba configuration and add the following section
+
+</code></pre>
+<p>[data]
+  path = /srv/samba/data
+  public = no
+  writable = yes
+  printable = no
+  guest ok = no</p>
+<pre><code>Test the config
+
+</code></pre>
+<p>testparm -s</p>
+<pre><code>restart the service
+
+</code></pre>
+<p>systemctl restart smb</p>
+<pre><code>
+On your workstation open a terminal and run
+
+</code></pre>
+<p>smbclient -L rpi -U admin
+Password for [WORKGROUP\admin]:</p>
+<pre><code>    Sharename       Type      Comment
+    ---------       ----      -------
+    public          Disk      
+    data            Disk      
+    IPC$            IPC       IPC Service (Manjaro Samba Server)
+</code></pre>
+<p>SMB1 disabled -- no workgroup available</p>
+<pre><code>
+## the media share
+The media share resides on a removable device and we want the device to be mounted all times. The problem with removable devices is - they are removable - which is a challenge to be solved.
+
+We will face this challenge using systemd units.
+
+We need the UUID of the partition we want to mount - so attach the device to the Raspberry Pi and list the available block devices
+
+</code></pre>
+<h1 id="lsblk-a">lsblk -A</h1>
+<p>lsblk -A
+NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda            8:0    1  28,8G  0 disk 
+└─sda1         8:1    1  28,8G  0 part 
+mmcblk0      179:0    0  14,6G  0 disk 
+├─mmcblk0p1  179:1    0 457,8M  0 part /boot
+└─mmcblk0p2  179:2    0  14,1G  0 part /srv/samba/public
+                                       /srv/samba/data
+                                       /</p>
+<pre><code>The partition is /dev/sda1 - let's get the UUID and pipe it to the unit file.
+</code></pre>
+<p>lsblk -no UUID  /dev/sda1 &gt; /etc/systemd/system/data-media-music.mount</p>
+<pre><code>systemd mount unit naming convention is to use the mountpoint as filename replacing **/** with **-**.
+
+In our case we have placed the music files in the folder **/data/media/music** so this is where we mount the partition.
+
+Open the unit file using micro
+</code></pre>
+<p>micro /etc/systemd/system/data-media-music.mount</p>
+<pre><code>Alter the content to match below - arrange for you UUID which is unique for my system to end the line *What=/dev/disk/by-uuid/*. (do not add spaces before or after the equal sign **=** and observe the casing of properties)
+</code></pre>
+<p>[Unit]
+Description=USB stick with music files</p>
+<p>[Mount]
+What=/dev/disk/by-uuid/some-uuid-from-yoursystem
+Where=/data/media/music</p>
+<h1 id="type">Type=</h1>
+<p>Options=defaults.rw.noatime</p>
+<p>[Install]
+WantedBy=multi-user.target</p>
+<pre><code>Now we create unit which takes care of mount the partition when it is needed. The same rule on filename applies - but the extension is *.automount*
+</code></pre>
+<p>micro /etc/systemd/system/data-media-music.automount</p>
+<pre><code>The content of the automount is as follow
+</code></pre>
+<p>[Unit]
+Description=USB stick with music files
+ConditionPathExists=/data/media/music</p>
+<p>[Automount]
+Where=/data/media/music
+TimeoutIdleSec=300</p>
+<p>[Install]
+WantedBy=multi-user.target</p>
+<pre><code>All that is left now is to enable the automount unit
+
+</code></pre>
+<p>systemctl enable --now data-media-music.automount</p>
+<pre><code>To share the music folder on a common sharepoint - edit your smb.conf and add the following section 
+</code></pre>
+<p>[music]
+  path = /srv/samba/data/media/music
+  public = yes
+  printable = no
+  guest ok = yes</p>
+<pre><code>Test your configuration  
+</code></pre>
+<p>testparm -s</p>
+<pre><code>Restart the service
+</code></pre>
+<p>systemctl restart smb
+```</p>
+<h2 id="done">Done</h2>
+<p>You have setup your raspberry pi to run a samba service and succesfully shared a public and a private folder.</p>
+<p>Also posted at <a href="https://forum.manjaro.org/t/root-tip-how-to-samba-fileserver-over-wifi-using-raspberry-pi/124428">Manjaro Forum</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/" class="btn btn-neutral float-left" title="Pi Zero W - prepare wireless connection"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../samba-basic-setup-and-troubleshooting/" class="btn btn-neutral float-right" title="Basic Samba Setup and Troubleshooting">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../raspberry-pi/raspberry-pi-zero-w-prepare-wireless-connection/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../samba-basic-setup-and-troubleshooting/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
