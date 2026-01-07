@@ -1,0 +1,292 @@
+---
+title: 'Linux is Not Windows'
+date: '08:47 27-12-2024'
+taxonomy:
+    category:
+        - docs
+---
+
+This work is copyright 2006-24-05 and belongs to Dominic Humphries.  
+It may be redistributed under a [Creative Commons License](http://creativecommons.org/licenses/by-nc-sa/2.5/).  
+The URL [http://linux.oneandoneis2.org/LNW.htm](http://linux.oneandoneis2.org/LNW.htm) must supplied in attribution.
+
+In the following article, the author refer to the GNU/Linux OS and various Free & Open-Source Software (FOSS) projects under the catch-all name of "Linux". It scans better.
+
+# Linux != Windows *or* Linux is Not Windows
+
+If you've been pointed at this page, then the chances are you're a relatively new Linux user who's having some problems making the switch from Windows to Linux. This causes many problems for many people, hence this article was written. Many individual issues arise from this single problem, so the page is broken down into multiple problem areas.
+
+## Problem #1: Linux isn't exactly the same as Windows.
+
+You'd be amazed how many people make this complaint. They come to Linux, expecting to find essentially a free, open-source version of Windows. Quite often, this is what they've been told to expect by over-zealous Linux users. However, it's a paradoxical hope.
+
+The specific reasons why people try Linux vary wildly, but the overall reason boils down to one thing: They hope Linux will be better than Windows. Common yardsticks for measuring success are cost, choice, performance, and security. There are many others. But every Windows user who tries Linux, does so because they hope it will be better than what they've got.
+
+Therein lies the problem.
+
+It is logically impossible for any thing to be better than any other thing whilst remaining completely identical to it. A perfect copy may be equal, but it can never surpass. So when you gave Linux a try in hopes that it would be better, you were inescapably hoping that it would be different. Too many people ignore this fact, and hold up every difference between the two OSes as a Linux failure.
+
+As a simple example, consider driver upgrades: one typically upgrades a hardware driver on Windows by going to the manufacturer's website and downloading the new driver; whereas in Linux you upgrade the kernel.
+
+This means that a single Linux download & upgrade will give you the newest drivers available for your machine, whereas in Windows you would have to surf to multiple sites and download all the upgrades individually. It's a very different process, but it's certainly not a bad one. But many people complain because it's not what they're used to.
+
+Or, as an example you're more likely to relate to, consider Firefox: One of the biggest open-source success stories. A web browser that took the world by storm. Did it achieve this success by being a perfect imitation of IE, the then-most-popular browser?
+
+No. It was successful because it was better than IE, and it was better because it was different. It had tabbed browsing, live bookmarks, built-in searchbar, PNG support, adblock extensions, and other wonderful things. The "Find" functionality appeared in a toolbar at the bottom and looked for matches as you typed, turning red when you had no match. IE had no tabs, no RSS functionality, searchbars only via third-party extensions, and a find dialogue that required a click on "OK" to start looking and a click on "OK" to clear the "Not found" error message. A clear and inarguable demonstration of an open-source application achieving success by being better, and being better by being different. Had FF been an IE clone, it would have vanished into obscurity. And had Linux been a Windows clone, the same would have happened.
+
+### So the solution to problem #1: 
+Remember that where Linux is familiar and the same as what you're used to, it isn't new & improved. Welcome the places where things are different, because only here does it have a chance to shine.
+
+## Problem #2: Linux is too different from Windows
+
+The next issue arises when people do expect Linux to be different, but find that some differences are just too radical for their liking. Probably the biggest example of this is the sheer amount of choice available to Linux users. Whereas an out-of-the-box-Windows user has the Classic or XP desktop with Wordpad, Internet Explorer, and Outlook Express installed, an out-of-the-box-Linux user has hundreds of distros to choose from, then Gnome or KDE or Fluxbox or whatever, with vi or emacs or kate, Konqueror or Opera or Firefox or Mozilla, and so on and so forth.
+
+A Windows user isn't used to making so many choices just to get up & running. Exasperated "Does there have to be so much choice?" posts are very common.
+
+Does Linux really have to be so different from Windows? After all, they're both operating systems. They both do the same job: Power your computer & give you something to run applications on. Surely they should be more or less identical?
+
+Look at it this way: Step outside and take a look at all the different vehicles driving along the road. These are all vehicles designed with more or less the same purpose: To get you from A to B via the roads. Note the variety in designs.
+
+But, you may be thinking, car differences are really quite minor: they all have a steering wheel, foot-pedal controls, a gear stick, a handbrake, windows & doors, a petrol tank. . . If you can drive one car, you can drive any car!
+
+Quite true. But did you not see that some people weren't driving cars, but were riding motorbikes instead. . ?
+
+Switching from one version of Windows to another is like switching from one car to another. Win95 to Win98, I honestly couldn't tell the difference. Win98 to WinXP, it was a bigger change but really nothing major.
+
+But switching from Windows to Linux is like switching from a car to a motorbike. They may both be OSes/road vehicles. They may both use the same hardware/roads. They may both provide an environment for you to run applications/transport you from A to B. But they use fundamentally different approaches to do so.
+
+Windows/cars are not safe from viruses/theft unless you install an antivirus/lock the doors. Linux/motorbikes don't have viruses/doors, so are perfectly safe without you having to install an antivirus/lock any doors.
+
+Or look at it the other way round:
+
+Linux/cars were designed from the ground up for multiple users/passengers. Windows/motorbikes were designed for one user/passenger. Every Windows user/motorbike driver is used to being in full control of his computer/vehicle at all times. A Linux user/car passenger is used to only being in control of his computer/vehicle when logged in as root/sitting in the driver's seat.
+
+Two different approaches to fulfilling the same goal. They differ in fundamental ways. They have different strengths and weaknesses: A car is the clear winner at transporting a family & a lot of cargo from A to B: More seats & more storage space. A motorbike is the clear winner at getting one person from A to B: Less affected by congestion and uses less fuel.
+
+There are many things that don't change when you switch between cars and motorbikes: You still have to put petrol in the tank, you still have to drive on the same roads, you still have to obey the traffic lights and Stop signs, you still have to indicate before turning, you still have to obey the same speed limits.
+
+But there are also many things that do change: Car drivers don't have to wear crash helmets, motorbike drivers don't have to put on a seatbelt. Car drivers have to turn the steering wheel to get around a corner, motorbike drivers have to lean over. Car drivers accelerate by pushing a foot-pedal, motorbike drivers accelerate by twisting a hand control.
+
+A motorbike driver who tries to corner a car by leaning over is going to run into problems very quickly. And Windows users who try to use their existing skills and habits generally also find themselves having many issues. In fact, Windows "Power Users" frequently have more problems with Linux than people with little or no computer experience, for this very reason. Typically, the most vehement "Linux is not ready for the desktop yet" arguments come from ingrained Windows users who reason that if they couldn't make the switch, a less-experienced user has no chance. But this is the exact opposite of the truth.
+
+So, to avoid problem #2: Don't assume that being a knowledgeable Windows user means you're a knowledgeable Linux user: When you first start with Linux, you are a novice.
+
+## Problem #3: Culture shock
+
+### Subproblem #3a: There is a culture
+
+Windows users are more or less in a customer-supplier relationship: They pay for software, for warranties, for support, and so on. They expect software to have a certain level of usability. They are therefore used to having rights with their software: They have paid for technical support and have every right to demand that they receive it. They are also used to dealing with entities rather than people: Their contracts are with a company, not with a person.
+
+Linux users are in more of a community. They don't have to buy the software, they don't have to pay for technical support. They download software for free & use Instant Messaging and web-based forums to get help. They deal with people, not corporations.
+
+A Windows user will not endear himself by bringing his habitual attitudes over to Linux, to put it mildly.
+
+The biggest cause of friction tends to be in the online interactions: A "3a" user new to Linux asks for help with a problem he's having. When he doesn't get that help at what he considers an acceptable rate, he starts complaining and demanding more help. Because that's what he's used to doing with paid-for tech support. The problem is that this isn't paid-for support. This is a bunch of volunteers who are willing to help people with problems out of the goodness of their hearts. The new user has no right to demand anything from them, any more than somebody collecting for charity can demand larger donations from contributors.
+
+In much the same way, a Windows user is used to using commercial software. Companies don't release software until it's reliable, functional, and user-friendly enough. So this is what a Windows user tends to expect from software: It starts at version 1.0. Linux software, however, tends to get released almost as soon as it's written: It starts at version 0.1. This way, people who really need the functionality can get it ASAP; interested developers can get involved in helping improve the code; and the community as a whole stays aware of what's going on.
+
+If a "3a" user runs into trouble with Linux, he'll complain: The software hasn't met his standards, and he thinks he has a right to expect that standard. His mood won't be improved when he gets sarcastic replies like "I'd demand a refund if I were you"
+
+So, to avoid problem #3a: Simply remember that you haven't paid the developer who wrote the software or the people online who provide the tech support. They don't owe you anything.
+
+### Subproblem #3b: New vs. Old
+
+ Linux pretty much started out life as a hacker's hobby. It grew as it attracted more hobbyist hackers. It was quite some time before anybody but a geek stood a chance of getting a useable Linux installation working easily. Linux started out "By geeks, for geeks." And even today, the majority of established Linux users are self-confessed geeks.
+
+And that's a pretty good thing: If you've got a problem with hardware or software, having a large number of geeks available to work on the solution is a definite plus. 
+
+But Linux has grown up quite a bit since its early days. There are distros that almost anybody can install, even distros that live on CDs and detect all your hardware for you without any intervention. It's become attractive to non-hobbyist users who are just interested in it because it's virus-free and cheap to upgrade. It's not uncommon for there to be friction between the two camps. It's important to bear in mind, however, that there's no real malice on either side: It's lack of understanding that causes the problems.
+
+Firstly, you get the hard-core geeks who still assume that everybody using Linux is a fellow geek. This means they expect a high level of knowledge, and often leads to accusations of arrogance, elitism, and rudeness. And in truth, sometimes that's what it is. But quite often, it's not: It's elitist to say "Everybody ought to know this". It's not elitist to say "Everybody knows this" - quite the opposite. 
+
+Secondly, you get the new users who're trying to make the switch after a lifetime of using commercial OSes. These users are used to software that anybody can sit down & use, out-of-the-box.
+
+The issues arise because group 1 is made up of people who enjoy being able to tear their OS apart and rebuild it the way they like it, while group 2 tends to be indifferent to the way the OS works, so long as it does work.
+
+A parallel situation that can emphasize the problems is Lego. Picture the following:
+
+**New:** I wanted a new toy car, and everybody's raving about how great Lego cars can be. So I bought some Lego, but when I got home, I just had a load of bricks and cogs and stuff in the box. Where's my car??
+
+**Old:** You have to build the car out of the bricks. That's the whole point of Lego.
+
+**New:** What?? I don't know how to build a car. I'm not a mechanic. How am I supposed to know how to put it all together??
+
+**Old:** There's a leaflet that came in the box. It tells you exactly how to put the bricks together to get a toy car. You don't need to know how, you just need to follow the instructions.
+
+**New:** Okay, I found the instructions. It's going to take me hours! Why can't they just sell it as a toy car, instead of making you have to build it??
+
+**Old:** Because not everybody wants to make a toy car with Lego. It can be made into anything we like. That's the whole point.
+
+**New:** I still don't see why they can't supply it as a car so people who want a car have got one, and other people can take it apart if they want to. Anyway, I finally got it put together, but some bits come off occasionally. What do I do about this? Can I glue it?
+
+**Old:** It's Lego. It's designed to come apart. That's the whole point.
+
+**New:** But I don't want it to come apart. I just want a toy car!
+
+**Old:** Then why on Earth did you buy a box of Lego??
+
+It's clear to just about anybody that Lego is not really aimed at people who just want a toy car. You don't get conversations like the above in real life. The whole point of Lego is that you have fun building it and you can make anything you like with it. If you've no interest in building anything, Lego's not for you. This is quite obvious.
+
+As far as the long-time Linux user is concerned, the same holds true for Linux: It's an open-source, fully-customizeable set of software. That's the whole point. If you don't want to hack the components a bit, why bother to use it?
+
+But there's been a lot of effort lately to make Linux more suitable for the non-hackers, a situation that's not a million miles away from selling pre-assembled Lego kits, in order to make it appeal to a wider audience. Hence you get conversations that aren't far away from the ones above: Newcomers complain about the existence of what the established users consider to be fundamental features, and resent having the read a manual to get something working.  But complaining that there are too many distros; or that software has too many configuration options; or that it doesn't work perfectly out-of-the-box; is like complaining that Lego can be made into too many models, and not liking the fact that it can be broken down into bricks and built into many other things.
+
+So, to avoid problem #3b: Just remember that what Linux seems to be now is not what Linux was in the past. The largest and most necessary part of the Linux community, the hackers and the developers, like Linux because they can fit it together the way they like; they don't like it in spite of having to do all the assembly before they can use it.
+
+## Problem #4: Designed for the designer
+
+In the car industry, you'll very rarely find that the person who designed the engine also designed the car interior: It calls for totally different skills. Nobody wants an engine that only looks like it can go fast, and nobody wants an interior that works superbly but is cramped and ugly. And in the same way, in the software industry, the user interface (UI) is not usually created by the people who wrote the software.
+
+In the Linux world, however, this is not so much the case: Projects frequently start out as one man's toy. He does everything himself, and therefore the interface has no need of any kind of "user friendly" features: The user knows everything there is to know about the software, he doesn't need help. Vi is a good example of software deliberately created for a user who already knows how it works: It's not unheard of for new users to reboot their computers because they couldn't figure out how else to get out of vi.
+
+However, there is an important difference between a FOSS programmer and most commercial software writers: The software a FOSS programmer creates is software that he intends to use. So whilst the end result might not be as 'comfortable' for the novice user, they can draw some comfort in knowing that the software is designed by somebody who knows what the end-users needs are: He too is an end-user. This is very different from commercial software writers, who are making software for other people to use: They are not knowledgeable end-users.
+
+So whilst vi has an interface that is hideously unfriendly to new users, it is still in use today because it is such a superb interface once you know how it works. Firefox was created by people who regularly browse the Web. The Gimp was built by people who use it to manipulate graphics files. And so on.
+
+So Linux interfaces are frequently a bit of a minefield for the novice: Despite its popularity, vi should never be considered by a new user who just wants to quickly make a few changes to a file. And if you're using software early in its lifecycle, a polished, user-friendly interface is something you're likely to find only in the "ToDo" list: Functionality comes first. Nobody designs a killer interface and then tries to add functionality bit by bit. They create functionality, and then improve the interface bit by bit.
+
+So to avoid #4 issues: Look for software that's specifically aimed at being easy for new users to use, or accept that some software that has a steeper learning curve than you're used to. To complain that vi isn't friendly enough for new users is to be laughed at for missing the point.
+
+## Problem #5: The myth of "user-friendly"
+
+This is a big one. It's a very big term in the computing world, "user-friendly". It's even the name of a particularly good webcomic. But it's a bad term.
+
+The basic concept is good: That software be designed with the needs of the user in mind. But it's always addressed as a single concept, which it isn't. 
+If you spend your entire life processing text files, your ideal software will be fast and powerful, enabling you to do the maximum amount of work for the minimum amount of effort. Simple keyboard shortcuts and mouseless operation will be of vital importance.
+
+But if you very rarely edit text files, and you just want to write an occasional letter, the last thing you want is to struggle with learning keyboard shortcuts. Well-organized menus and clear icons in toolbars will be your ideal. 
+
+Clearly, software designed around the needs of the first user will not be suitable for the second, and vice versa. So how can any software be called "user-friendly", if we all have different needs?
+
+The simple answer: User-friendly is a misnomer, and one that makes a complex situation seem simple.
+
+What does "user-friendly" really mean? Well, in the context in which it is used, "user friendly" software means "Software that can be used to a reasonable level of competence by a user with no previous experience of the software." This has the unfortunate effect of making lousy-but-familiar interfaces fall into the category of "user-friendly". 
+
+### Subproblem #5a: Familiar is friendly
+
+So it is that in most "user-friendly" text editors & word processors, you Cut and Paste by using Ctrl-X and Ctrl-V. Totally unintuitive, but everybody's used to these combinations, so they count as a "friendly" combination.
+
+So when somebody comes to vi and finds that it's "d" to cut, and "p" to paste, it's not considered friendly: It's not what anybody is used to.
+
+Is it superior? Well, actually, yes. 
+
+With the Ctrl-X approach, how do you cut a word from the document you're currently in? (No using the mouse!)
+From the start of the word, Ctrl-Shift-Right to select the word. 
+Then Ctrl-X to cut it.
+
+The vi approach? dw deletes the word.
+
+How about cutting five words with a Ctrl-X application?
+From the start of the words, Ctrl-Shift-Right
+Ctrl-Shift-Right
+Ctrl-Shift-Right
+Ctrl-Shift-Right
+Ctrl-Shift-Right
+Ctrl-X
+
+And with vi?
+
+d5w
+
+The vi approach is far more versatile and actually more intuitive: "X" and "V" are not obvious or memorable "Cut" and "Paste" commands, whereas "dw" to delete a word, and "p" to put it back is perfectly straightforward. But "X" and "V" are what we all know, so whilst vi is clearly superior, it's unfamiliar. Ergo, it is considered unfriendly. On no other basis, pure familiarity makes a Windows-like interface seem friendly. And as we learned in problem #1, Linux is necessarily different to Windows. Inescapably, Linux always appears less "user-friendly" than Windows. 
+
+To avoid #5a problems, all you can really do is try and remember that "user-friendly" doesn't mean "What I'm used to": Try doing things your usual way, and if it doesn't work, try and work out what a total novice would do. 
+
+### Subproblem #5b: Inefficient is friendly
+
+This is a sad but inescapable fact. Paradoxically, the harder you make it to access an application's functionality, the friendlier it can seem to be. 
+
+This is because friendliness is added to an interface by using simple, visible 'clues' - the more, the better. After all, if a complete novice to computers is put in front of a WYSIWYG word processor and asked to make a bit of text bold, which is more likely:
+
+He'll guess that "Ctrl-B" is the usual standard 
+
+He'll look for clues, and try clicking on the "Edit" menu. Unsuccessful, he'll try the next likely one along the row of menus: "Format". The new menu has a "Font" option, which seems promising. And Hey! There's our "Bold" option. Success!
+
+Next time you do any processing, try doing every job via the menus: No shortcut keys, and no toolbar icons. Menus all the way. You'll find you slow to a crawl, as every task suddenly demands a multitude of keystrokes/mouseclicks.
+Making software "user-friendly" in this fashion is like putting training wheels on a bicycle: It lets you get up & running immediately, without any skill or experience needed. It's perfect for a beginner. But nobody out there thinks that all bicycles should be sold with training wheels: If you were given such a bicycle today, I'll wager the first thing you'd do is remove them for being unnecessary encumbrances: Once you know how to ride a bike, training wheels are unnecessary.
+
+And in the same way, a great deal of Linux software is designed without "training wheels" - it's designed for users who already have some basic skills in place. After all, nobody's a permanent novice: Ignorance is short-lived, and knowledge is forever. So the software is designed with the majority in mind. 
+
+This might seem an excuse: After all, MS Word has all the friendly menus, and it has toolbar buttons, and it has shortcut keys. . . Best of all worlds, surely? Friendly and efficient.
+
+However, this has to be put into perspective: Firstly, the practicalities: having menus and toolbars and shortcuts and all would mean a lot of coding, and it's not like Linux developers all get paid for their time. Secondly, it still doesn't really take into account serious power-users: Very few professional wordsmiths use MS Word. Ever meet a coder who used MS Word? Compare that to how many use emacs & vi. 
+
+Why is this? Firstly, because some "friendly" behaviour rules out efficient behaviour: See the "Cut&Copy" example above. And secondly, because most of Word's functionality is buried in menus that you have to use: Only the most common functionality has those handy little buttons in toolbars at the top. The less-used functions that are still vital for serious users just take too long to access.
+
+Something to bear in mind, however, is that "training wheels" are often available as "optional extras" for Linux software: They might not be obvious, but frequently they're available.
+
+Take mplayer. You use it to play a video file by typing mplayer filename in a terminal. You fastforward & rewind using the arrow keys and the PageUp & PageDown keys. This is not overly "user-friendly". However, if you instead type gmplayer filename, you'll get the graphical frontend, with all its nice, friendly , familiar buttons.
+
+Take ripping a CD to MP3 (or Ogg): Using the command-line, you need to use cdparanoia to rip the files to disc. Then you need an encoder. . . It's a hassle, even if you know exactly how to use the packages (imho). So download & install something like Grip. This is an easy-to-use graphical frontend that uses cdparanoia and encoders behind-the-scenes to make it really easy to rip CDs, and even has CDDB support to name the files automatically for you. 
+
+The same goes for ripping DVDs: The number of options to pass to transcode is a bit of a nightmare. But using dvd::rip to talk to transcode for you makes the whole thing a simple, GUI-based process which anybody can do.
+
+So to avoid #5b issues: Remember that "training wheels" tend to be bolt-on extras in Linux, rather than being automatically supplied with the main product. And sometimes, "training wheels" just can't be part of the design.
+
+## Problem #6: Imitation vs. Convergence
+
+An argument people often make when they find that Linux isn't the Windows clone they wanted is to insist that this is what Linux has been (or should have been) attempting to be since it was created, and that people who don't recognise this and help to make Linux more Windows-like are in the wrong. They draw on many arguments for this:
+
+Linux has gone from Command-Line- to Graphics-based interfaces, a clear attempt to copy Windows
+
+Nice theory, but false: The original X windowing system was released in 1984, as the successor to the W windowing system ported to Unix in 1983. Windows 1.0 was released in 1985. Windows didn't really make it big until version 3, released in 1990 - by which time, X windows had for years been at the X11 stage we use today. Linux itself was only started in 1991. So Linux didn't create a GUI to copy Windows: It simply made use of a GUI that existed long before Windows.
+
+Windows 3 gave way to Windows 95 - making a huge level of changes to the UI that Microsoft has never equalled since. It had many new & innovative features: Drag & drop functionality; taskbars, and so on. All of which have since been copied by Linux, of course.
+
+Actually. . . no. All the above existed prior to Microsoft making use of them. NeXTSTeP in particular was a hugely advanced (for the time) GUI, and it predated Win95 significantly - version 1 released in 1989, and the final version in 1995.
+
+Okay, okay, so Microsoft didn't think up the individual features that we think of as the Windows Look-and-Feel. But it still created a Look-and-Feel, and Linux has been trying to imitate that ever since.
+
+To debunk this, one must discuss the concept of convergent evolution. This is where two completely different and independent systems evolve over time to become very similar. It happens all the time in biology. For example, sharks and dolphins. Both are (typically) fish-eating marine organisms of about the same size. Both have dorsal fins, pectoral fins, tail fins, and similar, streamlined shapes.
+
+However, sharks evolved from fish, while dolphins evolved from a land-based quadrupedal mammal of some sort. The reason they have very similar overall appearances is that they both evolved to be as efficient as possible at living within a marine environment. At no stage did pre-dolphins (the relative newcomers) look at sharks and think "Wow, look at those fins. They work really well. I'll try and evolve some myself!"
+
+Similarly, it's perfectly true to look at early Linux desktops and see FVWM and TWM and a lot of other simplistic GUIs. And then look at modern Linux desktops, and see Gnome & KDE with their taskbars and menus and eye-candy. And yes, it's true to say that they're a lot more like Windows than they used to be.
+
+But then, so is Windows: Windows 3.0 had no taskbar that I remember. And the Start menu? What Start menu?
+
+Linux didn't have a desktop anything like modern Windows. Microsoft didn't either. Now they both do. What does this tell us?
+
+It tells us that developers in both camps looked for ways of improving the GUI, and because there are only a limited number of solutions to a problem, they often used very similar methods. Similarity does not in any way prove or imply imitation. Remembering that will help you avoid straying into problem #6 territory.
+
+## Problem #7: That FOSS thing.
+
+Oh, this causes problems. Not intrinsically: The software being free and open-source is a wonderful and immensely important part of the whole thing. But understanding just how different FOSS is from proprietary software can be too big an adjustment for some people to make. 
+
+I've already mentioned some instances of this: People thinking they can demand technical support and the like. But it goes far beyond that. 
+
+Microsoft's Mission Statement is "A computer on every desktop" - with the unspoken rider that each computer should be running Windows. Microsoft and Apple both sell operating systems, and both do their utmost to make sure their products get used by the largest number of people: They're businesses, out to make money.
+
+And then there is FOSS. Which, even today, is almost entirely non-commercial.
+
+Before you reach for your email client to tell me about Red Hat, Suse, Linspire and all: Yes, I know they "sell" Linux. I know they'd all love Linux to be adopted universally, especially their own flavour of it. But don't confuse the suppliers with the manufacturers. The Linux kernel was not created by a company, and is not maintained by people out to make a profit with it. The GNU tools were not created by a company, and are not maintained by people out to make a profit with them. The X11 windowing system. . . well, the most popular implementation is xorg right now, and the ".org" part should tell you all you need to know. Desktop software: Well, you might be able to make a case for KDE being commercial, since it's Qt-based. But Gnome, Fluxbox, Enlightenment, etc. are all non-profit. There are people out to sell Linux, but they are very much the minority.
+
+Increasing the number of end-users of proprietary software leads to a direct financial benefit to the company that makes it. This is simply not the case for FOSS: There is no direct benefit to any FOSS developer in increasing the userbase. Indirect benefits, yes: Personal pride; an increased potential for finding bugs; more likelihood of attracting new developers; possibly a chance of a good job offer; and so on. 
+
+But Linus Torvalds doesn't make money from increased Linux usage. Richard Stallman doesn't get money from increased GNU usage. All those servers running OpenBSD and OpenSSH don't put a penny into the OpenBSD project's pockets. And so we come to the biggest problem of all when it comes to new users and Linux:
+
+They find out they're not wanted.
+
+New users come to Linux after spending their lives using an OS where the end-user's needs are paramount, and "user friendly" and "customer focus" are considered veritable Holy Grails. And they suddenly find themselves using an OS that still relies on 'man' files, the command-line, hand-edited configuration files, and Google. And when they complain, they don't get coddled or promised better things: They get bluntly shown the door.
+
+That's an exaggeration, of course. But it is how a lot of potential Linux converts perceived things when they tried and failed to make the switch. 
+
+In an odd way, FOSS is actually a very selfish development method: People only work on what they want to work on, when they want to work on it. Most people don't see any need to make Linux more attractive to inexperienced end-users: It already does what they want it to do, why should they care if it doesn't work for other people? 
+
+FOSS has many parallels with the Internet itself: You don't pay the writer of a webpage/the software to download and read/install it. Ubiquitous broadband/User-friendly interfaces are of no great interest to somebody who already has broadband/knows how to use the software. Bloggers/developers don't need to have lots of readers/users to justify blogging/coding. There are lots of people making lots of money off it, but it's not by the old-fashioned "I own this and you have to pay me if you want some of it" method that most businesses are so enamoured of; it's by providing services like tech-support/e-commerce. 
+
+Linux is not interested in market share. Linux does not have customers. Linux does not have shareholders, or a responsibility to the bottom line. Linux was not created to make money. Linux does not have the goal of being the most popular and widespread OS on the planet.
+
+All the Linux community wants is to create a really good, fully-featured, free operating system. If that results in Linux becoming a hugely popular OS, then that's great. If that results in Linux having the most intuitive, user-friendly interface ever created, then that's great. If that results in Linux becoming the basis of a multi-billion dollar industry, then that's great.
+
+It's great, but it's not the point. The point is to make Linux the best OS that the community is capable of making. Not for other people: For itself. The oh-so-common threats of "Linux will never take over the desktop unless it does such-and-such" are simply irrelevant: The Linux community isn't trying to take over the desktop. They really don't care if it gets good enough to make it onto your desktop, so long as it stays good enough to remain on theirs. The highly-vocal MS-haters, pro-Linux zealots, and money-making FOSS purveyors might be loud, but they're still minorities.
+
+That's what the Linux community wants: an OS that can be installed by whoever really wants it. So if you're considering switching to Linux, first ask yourself what you really want.
+
+If you want an OS that doesn't chauffeur you around, but hands you the keys, puts you in the driver's seat, and expects you to know what to do: Get Linux. You'll have to devote some time to learning how to use it, but once you've done so, you'll have an OS that you can make sit up and dance.
+
+If you really just want Windows without the malware and security issues: Read up on good security practices; install a good firewall, malware-detector, and anti-virus; replace IE with a more secure browser; and keep yourself up-to-date with security updates. There are people out there (myself included) who've used Windows since 3.1 days right through to XP without ever being infected with a virus or malware: you can do it too. Don't get Linux: It will fail miserably at being what you want it to be.
+
+If you really want the security and performance of a Unix-based OS but with a customer-focussed attitude and an world-renowned interface: Buy an Apple Mac. OS X is great. But don't get Linux: It will not do what you want it to do.
+
+**It's not just about "Why should I want Linux?". It's also about "Why should Linux want me?"**
